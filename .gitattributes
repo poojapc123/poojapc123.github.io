@@ -1,0 +1,16 @@
+# Your Git has core.autocrlf=true, which rewrites line endings on commit.
+# That is fine for text and destroys binaries, so mark them explicitly.
+
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+
+# Serve text files with consistent endings.
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf

@@ -1,0 +1,568 @@
+<title>Pooja Chinchansur</title>
+<meta name="description" content="Pooja Chinchansur - full-stack developer building and securing production web and mobile systems.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --ground:      #eceff3;
+  --surface:     #f8fafb;
+  --surface-2:   #e3e7ec;
+  --ink:         #131920;
+  --ink-2:       #4d5764;
+  --ink-3:       #78838f;
+  --rule:        #ccd4dd;
+  --accent:      #8a5f0f;
+  --accent-soft: #f0e2c4;
+  --good:        #1c6b4c;
+  --shadow:      0 1px 2px rgba(19,25,32,.06), 0 8px 24px -16px rgba(19,25,32,.25);
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+  --sans:  "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono:  "Cascadia Mono", "Cascadia Code", ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+
+  --gutter: 11rem;
+  --measure: 62ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:      #0e1218;
+    --surface:     #151a21;
+    --surface-2:   #1c222b;
+    --ink:         #e7ecf1;
+    --ink-2:       #9aa5b1;
+    --ink-3:       #6f7a87;
+    --rule:        #262d37;
+    --accent:      #d9a441;
+    --accent-soft: #3a2f18;
+    --good:        #58c496;
+    --shadow:      0 1px 2px rgba(0,0,0,.5), 0 10px 30px -18px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"] {
+  --ground:      #0e1218;
+  --surface:     #151a21;
+  --surface-2:   #1c222b;
+  --ink:         #e7ecf1;
+  --ink-2:       #9aa5b1;
+  --ink-3:       #6f7a87;
+  --rule:        #262d37;
+  --accent:      #d9a441;
+  --accent-soft: #3a2f18;
+  --good:        #58c496;
+  --shadow:      0 1px 2px rgba(0,0,0,.5), 0 10px 30px -18px rgba(0,0,0,.9);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--surface); color: var(--ink);
+  padding: .6rem 1rem; z-index: 10;
+}
+.skip:focus { left: .5rem; top: .5rem; }
+
+.wrap {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+/* ---------- the mono utility voice: dates, labels, units ---------- */
+.stamp {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+/* ---------- masthead ---------- */
+.masthead {
+  padding-block: clamp(3.5rem, 9vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--rule);
+}
+.masthead__name {
+  font-size: clamp(2.7rem, 8vw, 5rem);
+  line-height: .98;
+  letter-spacing: -.02em;
+  margin-block: .5rem .9rem;
+}
+.masthead__role {
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.masthead__lead {
+  max-width: var(--measure);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  color: var(--ink-2);
+  margin-bottom: 1.6rem;
+}
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--mono); font-size: .76rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: none;
+  padding: .62rem 1.05rem;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: border-color .15s ease, color .15s ease, transform .15s ease;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.btn--primary { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+.btn--primary:hover { color: var(--ground); border-color: var(--ink); opacity: .88; }
+
+/* ---------- section scaffold: meta gutter + content ---------- */
+.section { padding-block: clamp(2.75rem, 6vw, 4.5rem); border-bottom: 1px solid var(--rule); }
+.section__grid { display: grid; gap: 1.5rem 2.5rem; }
+@media (min-width: 62rem) {
+  .section__grid { grid-template-columns: var(--gutter) minmax(0, 1fr); }
+}
+.section__head { position: sticky; top: 1.5rem; align-self: start; }
+.section__title { font-size: 1.05rem; letter-spacing: -.01em; margin-top: .35rem; }
+
+/* ---------- measured results ---------- */
+.metrics { list-style: none; padding: 0; margin: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+@media (min-width: 46rem) { .metrics { grid-template-columns: 1fr 1fr; } }
+.metric { background: var(--surface); padding: 1.35rem 1.4rem 1.5rem; }
+.metric__label {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.metric__row {
+  display: flex; align-items: baseline; gap: .55rem;
+  font-family: var(--mono); font-variant-numeric: tabular-nums;
+  margin-block: .5rem .85rem;
+}
+.metric__from { font-size: 1.15rem; color: var(--ink-3); text-decoration: line-through; text-decoration-thickness: 1px; }
+.metric__arrow { color: var(--ink-3); }
+.metric__to { font-size: 1.85rem; color: var(--good); letter-spacing: -.02em; }
+.gauge { display: grid; gap: 4px; margin-bottom: .85rem; }
+.gauge__track { height: 6px; background: var(--surface-2); }
+.gauge__fill { display: block; height: 100%; width: var(--w); }
+.gauge__fill--before { background: var(--ink-3); }
+.gauge__fill--after { background: var(--good); }
+@media (prefers-reduced-motion: no-preference) {
+  .gauge__fill { animation: grow .9s cubic-bezier(.2,.7,.3,1) both; }
+  .gauge__fill--after { animation-delay: .25s; }
+}
+@keyframes grow { from { width: 0; } to { width: var(--w); } }
+.metric__note { font-size: .92rem; color: var(--ink-2); }
+
+/* ---------- case studies ---------- */
+.cases { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.case { background: var(--surface); padding: 1.6rem 1.5rem 1.75rem; }
+.case__title { font-size: 1.35rem; letter-spacing: -.015em; max-width: 28ch; }
+.case .stamp { margin-top: .35rem; color: var(--accent); }
+.case__body { margin: 1.1rem 0 0; display: grid; gap: .3rem; }
+@media (min-width: 46rem) {
+  .case__body { grid-template-columns: 7.5rem minmax(0, 1fr); gap: .55rem 1.5rem; }
+}
+.case__body dt {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-3); padding-top: .28em;
+}
+.case__body dd { margin: 0; max-width: var(--measure); color: var(--ink-2); }
+.case__result { color: var(--ink) !important; }
+.section__aside { font-size: .85rem; color: var(--ink-3); margin-top: .5rem; max-width: 22ch; }
+
+/* ---------- work log ---------- */
+.role { display: grid; gap: .5rem 2.5rem; padding-block: 1.9rem; border-top: 1px solid var(--rule); }
+.role:first-of-type { border-top: 0; padding-top: 0; }
+@media (min-width: 62rem) { .role { grid-template-columns: var(--gutter) minmax(0, 1fr); } }
+.role__meta { display: grid; gap: .15rem; align-content: start; }
+.role__place { font-family: var(--mono); font-size: .7rem; color: var(--ink-3); letter-spacing: .06em; }
+.role__company { font-size: 1.45rem; letter-spacing: -.015em; }
+.role__title { color: var(--accent); font-family: var(--mono); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; margin-top: .2rem; }
+.role__intro { max-width: var(--measure); color: var(--ink-2); margin-top: .8rem; }
+.role__points { margin: .9rem 0 0; padding: 0; list-style: none; display: grid; gap: .6rem; max-width: var(--measure); }
+.role__points li { position: relative; padding-left: 1.1rem; }
+.role__points li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: 5px; height: 5px; background: var(--accent);
+}
+
+/* ---------- skills ---------- */
+.skills { display: grid; gap: 1.15rem; }
+.skill { display: grid; gap: .2rem; }
+.skill__items { max-width: var(--measure); color: var(--ink-2); }
+
+/* ---------- projects ---------- */
+.projects { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+@media (min-width: 52rem) { .projects { grid-template-columns: 1fr 1fr; } }
+.project { background: var(--surface); padding: 1.4rem; display: grid; gap: .45rem; align-content: start; }
+.project__name { font-size: 1.2rem; }
+.project p:last-child { color: var(--ink-2); font-size: .96rem; }
+
+/* ---------- credentials ---------- */
+.creds { display: grid; gap: 1.6rem; }
+@media (min-width: 52rem) { .creds { grid-template-columns: 1fr 1fr; } }
+.creds ul { margin: .4rem 0 0; padding: 0; list-style: none; display: grid; gap: .5rem; }
+.creds li { padding-left: 1.1rem; position: relative; color: var(--ink-2); }
+.creds li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; background: var(--rule); }
+
+/* ---------- contact ---------- */
+.contact { padding-block: clamp(3rem, 7vw, 5rem); }
+.contact__line { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); letter-spacing: -.02em; max-width: 20ch; margin-bottom: 1.5rem; }
+.contact__grid { display: grid; gap: 1rem; }
+@media (min-width: 40rem) { .contact__grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 62rem) { .contact__grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.contact__item { display: grid; gap: .2rem; }
+.contact__item a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; word-break: break-word; }
+.contact__item a:hover { border-color: var(--accent); color: var(--accent); }
+.colophon { border-top: 1px solid var(--rule); padding-block: 1.5rem 2.5rem; color: var(--ink-3); font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; }
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="masthead__role">Full-stack developer &middot; web, mobile, application security</p>
+    <h1 class="masthead__name">Pooja Chinchansur</h1>
+    <p class="masthead__lead">I build and secure production web and mobile systems. Right now that is a live ride-hailing platform: a 406-route NestJS API, two Next.js portals and two Flutter apps, all on one backend.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="mailto:poojachinchansur3443@gmail.com">Get in touch</a>
+      <a class="btn" href="Pooja_Chinchansur_Resume.pdf">Resume (PDF)</a>
+      <a class="btn" href="https://github.com/poojapc123" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/pooja-chinchansur-44378222a" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="wrap section__grid">
+      <div class="section__head">
+        <p class="stamp">Measured</p>
+        <h2 class="section__title">What changed, in numbers</h2>
+      </div>
+      <div>
+        <ul class="metrics">
+        <li class="metric">
+          <p class="metric__label">PDF invoice render</p>
+          <div class="metric__row">
+            <span class="metric__from">2.94 s</span>
+            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
+            <span class="metric__to">614 ms</span>
+          </div>
+          <div class="gauge" role="img" aria-label="before 2.94 s, after 614 ms">
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:21%"></span></div>
+          </div>
+          <p class="metric__note">One shared headless browser instead of one launched per document. 4.8x faster after the first render.</p>
+        </li>
+        <li class="metric">
+          <p class="metric__label">Admin bookings payload</p>
+          <div class="metric__row">
+            <span class="metric__from">10,503 B</span>
+            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
+            <span class="metric__to">779 B</span>
+          </div>
+          <div class="gauge" role="img" aria-label="before 10,503 B, after 779 B">
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:7%"></span></div>
+          </div>
+          <p class="metric__note">gzip response compression, loaded defensively so a missing module warns instead of stopping the API booting.</p>
+        </li>
+        <li class="metric">
+          <p class="metric__label">Live currency calls per fare quote</p>
+          <div class="metric__row">
+            <span class="metric__from">1</span>
+            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
+            <span class="metric__to">0</span>
+          </div>
+          <div class="gauge" role="img" aria-label="before 1, after 0">
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:0%"></span></div>
+          </div>
+          <p class="metric__note">12-hour cache, in-flight de-duplication, last-known-good rates so quotes survive provider outages.</p>
+        </li>
+        <li class="metric">
+          <p class="metric__label">Outbound calls with a deadline</p>
+          <div class="metric__row">
+            <span class="metric__from">0 of 26</span>
+            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
+            <span class="metric__to">26 of 26</span>
+          </div>
+          <div class="gauge" role="img" aria-label="before 0 of 26, after 26 of 26">
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:0%"></span></div>
+            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:100%"></span></div>
+          </div>
+          <p class="metric__note">15s globally, 6s for Google Maps on booking and dispatch paths. Previously every call could hang indefinitely.</p>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap section__grid">
+      <div class="section__head">
+        <p class="stamp">Case studies</p>
+        <h2 class="section__title">Four problems, in full</h2>
+      </div>
+      <div class="cases">
+      <article class="case">
+        <h3 class="case__title">The GST that quietly became zero</h3>
+        <p class="stamp">NestJS, Redis, production debugging</p>
+        <dl class="case__body">
+          <dt>Problem</dt><dd>A projected read was writing a partial app-configuration document under the shared cache key. Every later reader got a document with no tax field, so GST silently dropped to zero on customer fare quotes. Booking quotes hit that key constantly, so the cache stayed poisoned almost permanently.</dd>
+          <dt>What I did</dt><dd>Traced a wrong fare back through the quote path into the cache layer, and stopped projected reads from ever populating the shared key.</dd>
+          <dt>Result</dt><dd class="case__result">Fares charge the correct tax again. Nothing had ever thrown an error - the only symptom was revenue quietly going missing.</dd>
+        </dl>
+      </article>
+      <article class="case">
+        <h3 class="case__title">A performance pass where every number was measured</h3>
+        <p class="stamp">NestJS, Puppeteer, MongoDB</p>
+        <dl class="case__body">
+          <dt>Problem</dt><dd>The admin dashboard and both apps felt slow, but nothing was instrumented and the usual suspects were innocent - indexes, the Redis session cache and the driver location pings all turned out to be sound.</dd>
+          <dt>What I did</dt><dd>Audited the whole request path. Replaced a Chrome launch per PDF with one shared instance capped at four concurrent renders, cached exchange rates for twelve hours with in-flight de-duplication and last-known-good fallbacks, put deadlines on all 26 outbound HTTP calls, enabled gzip, and configured the Mongo connection pool and socket timeout.</dd>
+          <dt>Result</dt><dd class="case__result">PDF rendering fell from 2.94s to 614ms, the admin bookings payload shrank 92.6%, and the live currency call disappeared from every fare quote. Every change measured before and after.</dd>
+        </dl>
+      </article>
+      <article class="case">
+        <h3 class="case__title">An audit trail the business can actually read</h3>
+        <p class="stamp">NestJS interceptors, data privacy</p>
+        <dl class="case__body">
+          <dt>Problem</dt><dd>The first version of the staff audit log stored raw request bodies - including login credentials in plaintext - and recorded driver and customer app traffic, where location pings alone produced around 27,000 rows a day and buried the staff activity the log existed for.</dd>
+          <dt>What I did</dt><dd>Redacted the bodies, migrated the stored credentials out, scoped recording to staff only, and rebuilt the entry itself: which record changed, which fields changed, and their before and after values, with CSV export. Made logging best-effort, so a failure while recording can never roll back the action it is recording.</dd>
+          <dt>Result</dt><dd class="case__result">A log an operations manager can read - &quot;Driver / via Admin&quot;, and the exact fields that changed - instead of URL fragments and IP addresses.</dd>
+        </dl>
+      </article>
+      <article class="case">
+        <h3 class="case__title">Knowing when to roll back</h3>
+        <p class="stamp">RBAC, release judgement</p>
+        <dl class="case__body">
+          <dt>Problem</dt><dd>A granular module.action permission system replaced whole-module grants across the API and the admin panel. Within hours it locked fleet owners out of routes their deployed portal depends on, then cost staff accounts endpoints they had been using daily.</dd>
+          <dt>What I did</dt><dd>Reverted the permission model to what was already deployed rather than keep patching live access, then re-shipped only the part with clear value - grant and revoke - on top of the working system. A global validation pipe enabled the same week had switched on 411 validators that had never once run and was failing every driver edit; that came out the same morning, with the safe re-enable sequence written into the code.</dd>
+          <dt>Result</dt><dd class="case__result">Access restored the same day, the useful half of the change kept, and the rollback documented so the upgrade can be retried deliberately instead of abandoned.</dd>
+        </dl>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap section__grid">
+      <div class="section__head">
+        <p class="stamp">Work</p>
+        <h2 class="section__title">Where I have shipped</h2>
+        <p class="section__aside">Summarised. The resume carries the full record.</p>
+      </div>
+      <div>
+      <article class="role" id="1-us">
+        <div class="role__meta">
+          <p class="stamp">Jul 2026 - Present</p>
+          <p class="role__place">Bangalore, India</p>
+        </div>
+        <div class="role__body">
+          <h3 class="role__company">1 US</h3>
+          <p class="role__title">Full-Stack Developer (Web and Mobile Applications)</p>
+          <p class="role__intro">Deliver features end to end across a production ride-hailing platform of five deployed applications on one backend: a NestJS API (406 HTTP routes, 44 modules, 60 MongoDB models), two Next.js portals, and Flutter customer and driver apps.</p>
+          <ul class="role__points"><li>Build backend features in NestJS and TypeScript, including a notifications module with list, mark-read, and delete endpoints and a location-aware home services API powering the customer app&#x27;s service tiles, ETAs, and offer badges.</li><li>Rebuild core Flutter customer-app screens - home, login, OTP verification, splash, services, and notifications - with GetX controllers and bindings, reusable widgets, and a shared bottom navigation built from Figma design tokens; extended localization to 10 Indian languages so every new screen ships fully translated.</li><li>Cut API and dashboard response times in a measured performance pass: headless-browser pooling took PDF invoice rendering from 2.94s to 614ms (4.8x faster), gzip compression reduced the admin bookings payload from 10,503 to 779 bytes (92.6% smaller), and exchange-rate caching removed 9 live third-party calls per request cycle, including one on every customer fare quote.</li></ul>
+        </div>
+      </article>
+      <article class="role" id="gundal-business-private-limited">
+        <div class="role__meta">
+          <p class="stamp">Sep 2025 - Apr 2026</p>
+          <p class="role__place">Bangalore, India</p>
+        </div>
+        <div class="role__body">
+          <h3 class="role__company">Gundal Business Private Limited</h3>
+          <p class="role__title">System Administrator (Full-Stack Web Developer Responsibilities)</p>
+          <p class="role__intro">Appointed as System Administrator and given full-stack web development ownership alongside administration duties, acting as sole developer and administrator for the company&#x27;s web systems.</p>
+          <ul class="role__points"><li>Developed and maintained the company&#x27;s production website (gundal.in) end to end, building responsive interfaces in HTML5, CSS3, JavaScript, and Bootstrap wired to Python (Flask) backend services.</li><li>Designed and implemented RESTful APIs in Flask covering GET and POST operations, with request validation, structured error handling, and JSON responses consumed directly by front-end components.</li></ul>
+        </div>
+      </article>
+      <article class="role" id="c-dac-centre-for-development-of-advanced-computing">
+        <div class="role__meta">
+          <p class="stamp">Sep 2024 - Feb 2025</p>
+          <p class="role__place">Bangalore, India</p>
+        </div>
+        <div class="role__body">
+          <h3 class="role__company">C-DAC (Centre for Development of Advanced Computing)</h3>
+          <p class="role__title">Cybersecurity Intern</p>
+          
+          <ul class="role__points"><li>Performed end-to-end Web Application Vulnerability Assessment and Penetration Testing using Kali Linux, Burp Suite, OWASP ZAP, Nmap, Nessus, and Nikto.</li><li>Identified, exploited, and documented OWASP Top 10 vulnerabilities including SQL Injection, XSS, CSRF, and authentication flaws; delivered remediation guidance to developers and retested fixes through to closure.</li></ul>
+        </div>
+      </article>
+      <article class="role" id="kalvium">
+        <div class="role__meta">
+          <p class="stamp">Mar 2025 - Jun 2025</p>
+          <p class="role__place">Remote</p>
+        </div>
+        <div class="role__body">
+          <h3 class="role__company">Kalvium</h3>
+          <p class="role__title">Software Engineering Intern (Pre-Joining Learning Program)</p>
+          
+          <ul class="role__points"><li>Completed an intensive engineering program in frontend web development, Object-Oriented Programming, and DBMS, earning top proficiency levels - 4 belts in Java, 4 in Python, 3 in C++ - and defending coding assignments in mentor-led technical assessments.</li></ul>
+        </div>
+      </article>
+      <article class="role" id="edubridge-learning-pvt-ltd">
+        <div class="role__meta">
+          <p class="stamp">Mar 2024 - Sep 2024</p>
+          <p class="role__place">Remote, Part-Time</p>
+        </div>
+        <div class="role__body">
+          <h3 class="role__company">Edubridge Learning Pvt Ltd</h3>
+          <p class="role__title">Java Full-Stack Developer Intern</p>
+          
+          <ul class="role__points"><li>Developed full-stack web applications with HTML, CSS, and JavaScript front ends backed by Java and Spring Boot services following MVC architecture.</li><li>Built and consumed RESTful APIs validated with Postman, persisted data in MySQL, implemented login, session handling, and role-based access control, and tuned SQL queries to improve response times.</li></ul>
+        </div>
+      </article>
+      <article class="role" id="vk-rever">
+        <div class="role__meta">
+          <p class="stamp">Jan 2024 - Aug 2024</p>
+          <p class="role__place">Remote, Part-Time</p>
+        </div>
+        <div class="role__body">
+          <h3 class="role__company">VK REVER</h3>
+          <p class="role__title">Power BI and Data Analytics Intern</p>
+          
+          <ul class="role__points"><li>Built an interactive Twitter analytics dashboard in Power BI surfacing impressions, engagement by country, and top-performing content, applying data cleaning, modeling, and visualization design.</li></ul>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap section__grid">
+      <div class="section__head">
+        <p class="stamp">Stack</p>
+        <h2 class="section__title">What I work in</h2>
+      </div>
+      <div class="skills">
+      <div class="skill">
+        <p class="stamp">Programming Languages</p>
+        <p class="skill__items">JavaScript, TypeScript, Python, Java, Dart, C++, SQL, HTML5, CSS3</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Backend and APIs</p>
+        <p class="skill__items">Node.js, NestJS, Express, Flask, Spring Boot, REST API design, JWT authentication, role-based access control (RBAC), Mongoose ODM, WebSockets and Socket.IO, MVC architecture, API performance tuning and caching, Swagger and OpenAPI, Postman</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Frontend</p>
+        <p class="skill__items">React, Next.js 13, Ant Design, Bootstrap, SCSS, responsive design, server-side rendering, Google Maps JavaScript API</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Mobile Development</p>
+        <p class="skill__items">Flutter, Dart, GetX state management, cross-platform Android and iOS development, REST API integration, Firebase Cloud Messaging, push notifications, multi-language localization, Figma design-to-code implementation</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Databases and Caching</p>
+        <p class="skill__items">MongoDB, MySQL, Redis, database design, schema and index design, aggregation pipelines, stored procedures, SQL and NoSQL query optimization</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Cloud, DevOps, and Servers</p>
+        <p class="skill__items">AWS (Cloud Foundations), Docker, Kubernetes, Nginx, Apache, PM2, Linux and Windows Server administration, CI/CD with Bitbucket Pipelines, server hardening, backups, monitoring</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Integrations</p>
+        <p class="skill__items">payment gateway integration with Razorpay, Stripe, and Cashfree; Firebase, Twilio, MSG91, Google Maps Platform, SMTP and transactional email</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Application Security</p>
+        <p class="skill__items">VAPT, OWASP Top 10, SQL Injection, XSS, CSRF, broken authentication, secure code review, rate limiting, security headers, secrets management, TLS/SSL, PKI; Burp Suite, OWASP ZAP, Kali Linux, Nmap, Nessus, Nikto, Metasploit, OpenSSL, Splunk (SIEM), Wireshark, Autopsy, FTK Imager</p>
+      </div>
+      <div class="skill">
+        <p class="stamp">Tools and Methods</p>
+        <p class="skill__items">Git, GitHub, Bitbucket, VS Code, Postman, Figma, Power BI, Object-Oriented Programming, Secure Software Development Lifecycle (SSDLC), Agile and Scrum, unit testing</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap section__grid">
+      <div class="section__head">
+        <p class="stamp">Built</p>
+        <h2 class="section__title">Selected projects</h2>
+      </div>
+      <div class="projects">
+      <article class="project">
+        <h3 class="project__name">Ride-Hailing and Logistics Platform</h3>
+        <p class="stamp">NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter, Dart</p>
+        <p>Rides, parcel delivery, intercity, hourly, and daily rentals: distance-slab fare calculation with manual override, geofenced service areas, driver dispatch, WebSocket live tracking, multi-gateway payments (Razorpay, Stripe, Cashfree), staff audit logging, granular RBAC, and the Flutter customer and driver apps.</p>
+      </article>
+      <article class="project">
+        <h3 class="project__name">Corporate Web Platform - gundal.in</h3>
+        <p class="stamp">Python, Flask, JavaScript, Bootstrap, MySQL</p>
+        <p>Company website and Flask REST backend covering responsive UI, API design, database schema, deployment, and post-launch server administration and hardening.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap section__grid">
+      <div class="section__head">
+        <p class="stamp">Record</p>
+        <h2 class="section__title">Education and certifications</h2>
+      </div>
+      <div class="creds">
+        <div>
+          <p class="stamp">Education</p>
+          <ul><li>M.Tech, Computer Science and Engineering - Sharnbasva University, Kalaburagi | 2022 - 2024 | Gold Medalist</li><li>B.Tech, Computer Science and Engineering - Sharnbasva University, Kalaburagi | 2019 - 2022 | 5th Rank</li></ul>
+        </div>
+        <div>
+          <p class="stamp">Certifications</p>
+          <ul><li>Advanced Certificate Course in Cyber Security (HPC), C-DAC Bangalore - 2025</li><li>Java Full Stack Developer, Edubridge Learning with Capgemini (Spring Boot, AWS) - 2024</li><li>AWS Academy Graduate, AWS Academy Cloud Foundations - 2021</li><li>Data Analysis Using Microsoft Power BI - 2024</li><li>LEAP 5.0 Internship Program: Python, AWS, Docker, Kubernetes - 2022</li></ul>
+        </div>
+        <div>
+          <p class="stamp">Languages</p>
+          <ul><li>English, Hindi, Kannada (fluent); Telugu, Marathi, Tamil (conversational)</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <p class="stamp">Contact</p>
+      <p class="contact__line">Open to full-stack engineering roles.</p>
+      <div class="contact__grid">
+        <div class="contact__item">
+          <p class="stamp">Email</p>
+          <a href="mailto:poojachinchansur3443@gmail.com">poojachinchansur3443@gmail.com</a>
+        </div>
+        <div class="contact__item">
+          <p class="stamp">Phone</p>
+          <a href="tel:+917619403443">+91 7619403443</a>
+        </div>
+        <div class="contact__item">
+          <p class="stamp">LinkedIn</p>
+          <a href="https://linkedin.com/in/pooja-chinchansur-44378222a" rel="noopener">pooja-chinchansur-44378222a</a>
+        </div>
+        <div class="contact__item">
+          <p class="stamp">GitHub</p>
+          <a href="https://github.com/poojapc123" rel="noopener">poojapc123</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="colophon">Bangalore, Karnataka, India &nbsp;&middot;&nbsp; generated from MASTER_PROFILE.md</p>
+  </div>
+
+</main>
