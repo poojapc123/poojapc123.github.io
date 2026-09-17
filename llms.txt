@@ -1,0 +1,141 @@
+# Pooja Chinchansur
+
+> Full-Stack Developer | Node.js (NestJS), Next.js, Flutter, MongoDB | Application Security
+
+Location: Bangalore, Karnataka, India
+Email: poojachinchansur3443@gmail.com
+Phone: +91 7619403443
+LinkedIn: https://linkedin.com/in/pooja-chinchansur-44378222a
+GitHub: https://github.com/poojapc123
+Portfolio: https://poojapc123.github.io/
+Resume (PDF): https://poojapc123.github.io/Pooja_Chinchansur_Resume.pdf
+
+## Summary
+
+Full-Stack Developer (M.Tech, Gold Medalist) with 1+ year of experience building and securing production web and mobile systems. Sole developer on a live ride-hailing platform: a 406-route NestJS + MongoDB + Redis REST API, Next.js admin and fleet portals, and Flutter driver and customer apps, including the driver app's Google Play release and a paid Driver Pass subscription. Strong in REST API design, RBAC, payment gateway integration and measured performance and security work (4.8x faster rendering, 92.6% smaller payloads, OWASP Top 10 testing). Seeking a Full-Stack Software Engineer role.
+
+## Currently working on
+
+- Shipping the driver app: Google Play release 1.1.13: 20+ screens rebuilt from Figma with GetX in 10 Indian languages, onboarding and ride-request fixes, data-only push delivery in the background, signed AAB and store checklist delivered.
+- Bringing the new customer app live: A second NestJS service (the customer API) deployed behind Apache and PM2 next to the shared booking API, the Flutter customer app routed per environment, and Android and iOS store-readiness fixes.
+- Driver Pass and driver-facing features: Subscription purchase through Razorpay, Cashfree and Stripe with webhook activation; SOS, personal-insurance nomination, earnings history, outstation requests and an AI support assistant on the Claude API.
+- Running production: Dist-only deployments with timestamped backups and rollback, live hot-fixes folded back into source, version control introduced for four codebases, and an iOS build handoff for the Mac.
+- Next: An Admin "Service management" page so every service setting is owned by the dashboard, the API and the database - nothing hardcoded in the apps.
+
+## Experience
+
+### Freelance (Contract) - Full-Stack Developer, Ride-Hailing Platform
+Bangalore, India | Jul 2026 - Present
+
+- Sole developer on five production applications on one backend: a 406-route NestJS/TypeScript REST API over MongoDB and Redis, Next.js admin and fleet-owner portals, and Flutter driver and customer apps for Android and iOS.
+- Delivered the driver app's Google Play release (v1.1.13): rebuilt 20+ screens from Figma with GetX in 10 languages, fixed onboarding, ride-request queuing and accept-time eligibility checks, and made ride requests and cancellations data-only high priority FCM pushes that reach the app in the background.
+- Built features end to end: Driver Pass subscriptions (Razorpay, Cashfree and Stripe orders activated by payment webhook, admin-managed plans), outstation dispatch, SOS, and an AI support assistant on the Claude API grounded in admin FAQs and the driver's account state.
+- Integrated a new customer app and a second NestJS service into production: split routes between the customer API and the shared booking API, deployed it behind Apache reverse proxy and PM2, and verified login, booking, dispatch, push and share-tracking on the live stack.
+- Measured performance pass: PDF rendering 2.94 s to 614 ms (4.8x) with a shared headless Chrome pool, admin bookings payload 10,503 to 779 bytes (92.6%) with gzip, deadlines on all 26 outbound HTTP calls, exchange-rate caching with last-known-good fallback, MongoDB pool tuning.
+- Hardened API security and auditability: Helmet headers, rate limiting on OTP and login, JWT secret in environment config, an audit of all 406 endpoints closing unguarded routes, and a staff audit trail with before/after values and CSV export; fixed a cache bug that silently zeroed GST on fares.
+
+### Gundal Business Private Limited - System Administrator (Full-Stack Web Developer Responsibilities)
+Bangalore, India | Sep 2025 - Apr 2026
+
+- Developed and maintained the company website (gundal.in) end to end: responsive HTML5, CSS3, JavaScript and Bootstrap front end on Python (Flask) REST services with request validation and structured error handling.
+- Administered and secured servers, systems and databases: patching, scheduled backups with restore testing, uptime monitoring, role-based access policies and hardening baselines; optimized SQL queries to cut page load times.
+
+### Kalvium - Mentor, Pre-Joining Learning Program (B.Tech students)
+Remote | Mar 2025 - Jun 2025
+
+- Mentored B.Tech students through Kalvium's pre-joining learning program covering frontend web development, object-oriented programming and DBMS: guided their Java, Python and C++ coding assignments and ran the technical assessments in which they defended their work.
+
+### C-DAC (Centre for Development of Advanced Computing) - Cybersecurity Intern
+Bangalore, India | Sep 2024 - Feb 2025
+
+- Performed web application Vulnerability Assessment and Penetration Testing (VAPT) with Kali Linux, Burp Suite, OWASP ZAP, Nmap, Nessus and Nikto; found, exploited and documented OWASP Top 10 flaws (SQL Injection, XSS, CSRF, broken authentication).
+- Monitored events in Splunk and OSSIM, ran forensics with Autopsy, FTK Imager and Wireshark, and wrote remediation reports.
+
+### Edubridge Learning (with Capgemini) - Java Full-Stack Developer Intern
+Remote | Mar 2024 - Sep 2024
+
+- Built full-stack web apps with HTML, CSS and JavaScript on Java/Spring Boot (MVC) and MySQL: REST APIs, login, session handling, RBAC, SQL tuning.
+
+### VK REVER - Power BI and Data Analytics Intern
+Remote | Jan 2024 - Aug 2024
+
+- Built an interactive Twitter analytics dashboard in Power BI surfacing impressions, engagement by country and top-performing content, applying data cleaning, modeling and visualization design.
+
+## Measured results
+
+- PDF invoice render: 2.94 s -> 614 ms. One shared headless browser instead of one launched per document. 4.8x faster after the first render.
+- Admin bookings payload: 10,503 B -> 779 B. gzip response compression, loaded defensively so a missing module warns instead of stopping the API booting.
+- Live currency calls per fare quote: 1 -> 0. 12-hour cache, in-flight de-duplication, last-known-good rates so quotes survive provider outages.
+- Outbound calls with a deadline: 0 of 26 -> 26 of 26. 15s globally, 6s for Google Maps on booking and dispatch paths. Previously every call could hang indefinitely.
+- Deleted drivers blocking Aadhaar re-registration: 198 -> 0. Duplicate checks and two unique indexes counted soft-deleted accounts. Archived their numbers on delete and excluded them from the check.
+- Live sessions on one fleet account: 43 -> 1. Fleet logins never expired or replaced older sessions. Purged to the newest per account and moved the app-to-portal handoff into a URL fragment that never reaches server logs.
+
+## Case studies
+
+### A performance pass where every number was measured (NestJS, Puppeteer, MongoDB)
+Problem: The admin dashboard and both apps felt slow, but nothing was instrumented and the usual suspects were innocent - indexes, the Redis session cache and the driver location pings all turned out to be sound.
+What I did: Audited the whole request path. Replaced a Chrome launch per PDF with one shared instance capped at four concurrent renders, cached exchange rates for twelve hours with in-flight de-duplication and last-known-good fallbacks, put deadlines on all 26 outbound HTTP calls, enabled gzip, and configured the Mongo connection pool and socket timeout.
+Result: PDF rendering fell from 2.94s to 614ms, the admin bookings payload shrank 92.6%, and the live currency call disappeared from every fare quote. Every change measured before and after.
+
+### The GST that quietly became zero (NestJS, Redis, production debugging)
+Problem: A projected read was writing a partial app-configuration document under the shared cache key. Every later reader got a document with no tax field, so GST silently dropped to zero on customer fare quotes. Booking quotes hit that key constantly, so the cache stayed poisoned almost permanently.
+What I did: Traced a wrong fare back through the quote path into the cache layer, and stopped projected reads from ever populating the shared key.
+Result: Fares charge the correct tax again. Nothing had ever thrown an error - the only symptom was revenue quietly going missing.
+
+### The login that undid itself (Flutter, NestJS guards, on-device debugging)
+Problem: Drivers entered the OTP, reached Home, and were thrown back to Sign Up a moment later - on every launch. The token was being saved correctly, which made the symptom look impossible from the client code alone.
+What I did: Read the device log instead. On Home load one earnings endpoint answered 401 "no permission" from a role guard while every other call on the same token returned 200. The client treated any 401 or 403 as an expired session, navigated to login and wiped the token it had stored 300 ms earlier. Narrowed the logout to a genuine dead session - an "unauthorized" error code or a failed profile read - and left resource denials alone. Then found the production API was a stale build whose driver routes sat under an admin wildcard, and redeployed it with a backup and a rollback path.
+Result: Login sticks. Two bugs behind one symptom: a client that over-reacted and a server that had never been deployed.
+
+### Notifications that never popped (Firebase Cloud Messaging, Android channels)
+Problem: Every push landed in the in-app inbox, so the backend looked fine, yet nothing ever showed on the phone. Drivers missed cancellations and general alerts.
+What I did: The backend sent a channel id with a typo, so Android fell back to a default channel at normal importance - tray only, no banner. Fixed the id and priority on the server, created the high-importance channel natively on app start so it exists before the first push, and sequenced the two Android permission prompts so the second was no longer dropped. Ride requests and cancellations then moved to data-only high-priority messages handled by the app's own background service, with a native player for the cancellation voice.
+Result: Banners, ringtone and the cancel voice work in the foreground, in the background and after the app is swiped away - verified on a real device rather than from the inbox rows.
+
+### A second API on a live host, with no DNS to spare (Apache, PM2, NestJS, Flutter)
+Problem: A new customer app arrived with its own NestJS service on another port, sharing a JWT secret and a database with the existing booking API. It had to go live on the existing server with no wildcard DNS and no disruption to the driver app.
+What I did: Audited both stacks and wrote a working/broken report before touching code: which routes could move to the new service (auth, profile, places, share-tracking) and which had to stay on the shared API (quotes, bookings, dispatch, sockets, wallet, payments). Exposed the new service as a PM2 app behind path-based Apache proxy rules on the existing API host, gave the Flutter app a per-environment customer-API base URL, and staged install and vhost scripts with backups, config tests and rollback for the owner to run.
+Result: Verified end to end against production from an emulator - OTP login on the new service, the token accepted by the legacy API, a booking created and dispatched, push delivered, the public share-tracking page served, uploads landing in object storage. The driver app was never touched.
+
+### An audit trail the business can actually read (NestJS interceptors, data privacy)
+Problem: The first version of the staff audit log stored raw request bodies - including login credentials in plaintext - and recorded driver and customer app traffic, where location pings alone produced around 27,000 rows a day and buried the staff activity the log existed for.
+What I did: Redacted the bodies, migrated the stored credentials out, scoped recording to staff only, and rebuilt the entry itself: which record changed, which fields changed, and their before and after values, with CSV export. Made logging best-effort, so a failure while recording can never roll back the action it is recording.
+Result: A log an operations manager can read - "Driver / via Admin", and the exact fields that changed - instead of URL fragments and IP addresses.
+
+### Knowing when to roll back (RBAC, release judgement)
+Problem: A granular module.action permission system replaced whole-module grants across the API and the admin panel. Within hours it locked fleet owners out of routes their deployed portal depends on, then cost staff accounts endpoints they had been using daily.
+What I did: Reverted the permission model to what was already deployed rather than keep patching live access, then re-shipped only the part with clear value - grant and revoke - on top of the working system. A global validation pipe enabled the same week had switched on 411 validators that had never once run and was failing every driver edit; that came out the same morning, with the safe re-enable sequence written into the code.
+Result: Access restored the same day, the useful half of the change kept, and the rollback documented so the upgrade can be retried deliberately instead of abandoned.
+
+## Technical skills
+
+- Languages: JavaScript, TypeScript, Python, Java, Dart, SQL, C++, HTML5, CSS3
+- Backend and APIs: Node.js, NestJS, Express, Flask, Spring Boot, REST API design, JWT authentication, role-based access control (RBAC), Mongoose, WebSockets (Socket.IO), payment webhooks, cron jobs, Puppeteer, Swagger/OpenAPI, Postman
+- Frontend and Mobile: React, Next.js, Ant Design, Bootstrap, SCSS, responsive design, server-side rendering; Flutter, Dart, GetX, Android and iOS builds, Firebase Cloud Messaging, push notifications, localization, Figma design-to-code
+- Databases and Caching: MongoDB, MySQL, Redis, schema and index design, aggregation pipelines, geospatial queries, query optimization
+- Cloud, DevOps and Integrations: AWS, Docker, Kubernetes, Linux and Windows Server administration, Apache, Nginx, PM2, CI/CD, Git, GitHub, Google Play Console; Razorpay, Stripe, Cashfree, Twilio, Firebase, Google Maps Platform, Anthropic Claude API
+- Security and Practices: VAPT, OWASP Top 10, SQL Injection, XSS, CSRF, secure code review, rate limiting, security headers, secrets management, TLS/SSL; Burp Suite, OWASP ZAP, Kali Linux, Nmap, Nessus, Splunk (SIEM), Wireshark; Agile/Scrum, SSDLC, unit testing
+
+## Projects
+
+- Ride-Hailing and Logistics Platform (NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter, Dart): Rides, parcel delivery, intercity, hourly and daily rentals: distance-slab fare calculation with manual override, geofenced service areas, nearest-first driver dispatch, WebSocket live tracking, multi-gateway payments (Razorpay, Stripe, Cashfree), Driver Pass subscriptions, an AI support assistant, SOS, a public share-tracking page, staff audit logging, granular RBAC, and the Flutter driver and customer apps.
+- Corporate Web Platform - gundal.in (Python, Flask, JavaScript, Bootstrap, MySQL): Company website and Flask REST backend covering responsive UI, API design, database schema, deployment, and post-launch server administration and hardening.
+- Web Application VAPT Engagement (Kali Linux, Burp Suite, OWASP ZAP, Nessus, Nikto): Black-box and authenticated penetration test: reconnaissance, port scanning, manual and automated vulnerability discovery, exploitation of SQL Injection and XSS, and a report mapping each finding to OWASP Top 10 with severity and remediation steps.
+- Twitter Data Analysis Dashboard (Power BI): Modeled and visualized social media performance data, producing engagement, reach, and geography views that identified the highest-performing content.
+
+## Education
+
+- M.Tech, Computer Science and Engineering - Sharnbasva University, Kalaburagi | 2022 - 2024 | Gold Medalist
+- B.Tech, Computer Science and Engineering - Sharnbasva University, Kalaburagi | 2019 - 2022 | 5th Rank
+
+## Certifications
+
+- Advanced Certificate Course in Cyber Security (HPC), C-DAC Bangalore - 2025
+- Java Full Stack Developer, Edubridge Learning with Capgemini (Spring Boot, AWS) - 2024
+- AWS Academy Graduate, AWS Academy Cloud Foundations - 2021
+
+## Languages
+
+- English, Hindi, Kannada (fluent); Telugu (conversational)
+
+Last updated: 2026-09-17
