@@ -70,8 +70,25 @@ Freelance contract · 2026 - present | NestJS, TypeScript, MongoDB, Redis, Next.
 Booking platform for rides, parcel delivery, intercity trips and rentals: a rider app, a driver app, and admin and fleet-owner web portals on one backend.
 - Sole developer across the REST API, both Next.js portals and both Flutter apps.
 - Delivered the driver app's Google Play release: 20+ screens built from Figma, 10 languages, background push notifications.
-- Subscription payments through Razorpay, Cashfree and Stripe, activated by payment webhooks.
-- Measured performance work: PDF rendering from 2.94 s to 614 ms, API response payloads 92.6% smaller.
+- Subscription payments through Razorpay, Cashfree and Stripe, activated by payment webhooks; PDF rendering cut from 2.94 s to 614 ms.
+- Also built the marketing websites for the platform and its parent company (React, Vite, Next.js, TypeScript, Tailwind CSS).
+
+### Tea Stall Online Store
+Personal project · 2026 | HTML, CSS, JavaScript, Node.js, Razorpay, Vercel
+
+Redesign of a Bangalore tea retailer's website as a complete online store.
+- 13-page responsive storefront: shop, product pages, cart, checkout, and catering and franchise enquiry forms.
+- Razorpay checkout through four Node.js serverless functions, with cash on delivery as an option.
+- Prices are recalculated on the server, so a tampered request is still charged correctly; payments are verified by HMAC-SHA256 signature, with a webhook as backup.
+- A demo mode runs the whole checkout without payment keys.
+
+### Matrix - Internal Operations Application
+Gundal Business · 2025 - 2026 | Python, Flask, PostgreSQL, SQLAlchemy, JavaScript
+
+Internal web application for a public-sector data programme, where I built modules end to end, backend and frontend.
+- Invoicing module: GST invoices with HSN codes, automatic invoice numbering, customer records, and invoice history with edit, status and delete.
+- Ledger and stock management, including adding, adjusting and removing stock entries.
+- Two admin-dashboard reports (AC split details and AC part details), with cascading zone and area filters over PostgreSQL.
 
 ### Company Website - gundal.in
 Gundal Business · 2025 - 2026 | Python, Flask, JavaScript, Bootstrap, MySQL
@@ -82,13 +99,13 @@ The company's public website, built and maintained end to end, from the responsi
 - Ran the server after launch: patching, scheduled backups, hardening and SQL query tuning.
 Link: https://gundal.in
 
-### Web Application Penetration Test
+### Web Application Penetration Test - OWASP Juice Shop
 C-DAC internship · 2024 - 2025 | Kali Linux, Burp Suite, OWASP ZAP, Nmap, Nessus, Nikto
 
-Black-box and authenticated penetration test of a web application, from reconnaissance to a remediation report.
-- Reconnaissance and port scanning with Nmap, Nessus and Nikto; manual testing in Burp Suite and OWASP ZAP.
+Ethical vulnerability assessment and penetration testing of OWASP Juice Shop, a deliberately vulnerable web application, in a controlled lab.
+- Reconnaissance and scanning with Nmap, Nessus and Nikto; manual testing in Burp Suite and OWASP ZAP.
 - Found and exploited SQL injection, XSS, CSRF and broken authentication.
-- Report mapping each finding to the OWASP Top 10 with severity and fix steps; retested fixes through to closure.
+- Wrote a report mapping each finding to the OWASP Top 10 with severity and fix steps.
 
 ### Security Monitoring, Forensics and PKI Lab
 C-DAC internship · 2024 - 2025 | Splunk, OSSIM, Wireshark, Autopsy, FTK Imager, OpenSSL
@@ -98,13 +115,21 @@ Hands-on security operations work alongside the penetration testing programme.
 - Digital forensics with Autopsy, FTK Imager and Wireshark, written up as remediation reports.
 - Built and managed a public key infrastructure with digital certificates using XCA and Keytool; applied cryptography with OpenSSL.
 
-### Java Full-Stack Web Applications
+### NeuroDigiScan - Brain Tumour Detection using Deep Learning
+M.Tech project · 2022 - 2024 | Python, TensorFlow, Keras, OpenCV, Tkinter, SQLite
+
+Detects brain tumours in MRI scans with a convolutional neural network.
+- CNN in TensorFlow/Keras trained on the Kaggle Brain MRI dataset (253 scans), with data augmentation, dropout and precision/recall tracking.
+- OpenCV image pipeline: grayscale preprocessing, threshold segmentation and feature extraction.
+- Desktop application (Tkinter + SQLite) for doctors: login, patient registration, MRI upload, detection result and a patient report.
+
+### E-Cart - Online Shopping Application
 Edubridge with Capgemini · 2024 | Java, Spring Boot, MySQL, HTML, CSS, JavaScript
 
-Full-stack web applications on Spring Boot (MVC) and MySQL, built during the Java full-stack internship.
-- REST APIs on Spring Boot over a MySQL database.
+Online shopping web application in the style of Flipkart and Amazon, built during the Java full-stack internship.
+- Shopping flow on a Spring Boot (MVC) backend with REST APIs over MySQL.
 - Login, session handling and role-based access control.
-- HTML, CSS and JavaScript front ends; SQL query tuning.
+- HTML, CSS and JavaScript front end.
 
 ### Twitter Analytics Dashboard
 VK REVER internship · 2024 | Power BI
