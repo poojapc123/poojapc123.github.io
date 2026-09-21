@@ -131,10 +131,10 @@ Online shopping web application in the style of Flipkart and Amazon, built durin
 - Login, session handling and role-based access control.
 - HTML, CSS and JavaScript front end.
 
-### Twitter Analytics Dashboard
+### Power BI Project - Twitter Analytics Dashboard
 VK REVER internship · 2024 | Power BI
 
-Interactive Power BI dashboard of Twitter performance data.
+Interactive Power BI dashboard analysing Twitter performance data, built during the data analytics internship.
 - Impressions, engagement by country and top-performing content in one view.
 - Data cleaning, modelling and visualisation design.
 
