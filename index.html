@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Pooja Chinchansur</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pooja Chinchansur - full-stack developer (NestJS, Next.js, Flutter, MongoDB) building and securing a live ride-hailing platform. M.Tech gold medalist, Bangalore.">
+<meta name="description" content="Pooja Chinchansur - full-stack developer (Node.js, Next.js, Flutter, Flask, Spring Boot) with an application security background. Projects, experience and resume. M.Tech gold medalist, Bangalore.">
 <meta name="author" content="Pooja Chinchansur">
 <meta name="theme-color" content="#eceff3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1218" media="(prefers-color-scheme: dark)">
@@ -15,7 +15,7 @@
 <link rel="alternate" type="text/plain" href="llms.txt" title="Pooja Chinchansur - plain-text profile">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Pooja Chinchansur - Full-Stack Developer | Node.js (NestJS), Next.js, Flutter, MongoDB | Application Security">
-<meta property="og:description" content="I build and secure production web and mobile systems. Right now that is a live ride-hailing platform: a 406-route NestJS API, Next.js admin and fleet portals, and Flutter driver and customer apps on one backend - including the driver app&#39;s Google Play release and a second API service brought onto the live stack.">
+<meta property="og:description" content="I build and secure web and mobile applications end to end: REST APIs, web front ends, Flutter apps and the servers they run on. My work so far covers a production ride-hailing platform, a company website on Flask, Java Spring Boot web applications, and web-application penetration testing at C-DAC.">
 <meta property="og:url" content="https://poojapc123.github.io/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Pooja Chinchansur","jobTitle":"Full-Stack Developer","description":"Full-Stack Developer (M.Tech, Gold Medalist) with 1+ year of experience building and securing production web and mobile systems. Sole developer on a live ride-hailing platform: a 406-route NestJS + MongoDB + Redis REST API, Next.js admin and fleet portals, and Flutter driver and customer apps, including the driver app's Google Play release and a paid Driver Pass subscription. Strong in REST API design, RBAC, payment gateway integration and measured performance and security work (4.8x faster rendering, 92.6% smaller payloads, OWASP Top 10 testing). Seeking a Full-Stack Software Engineer role.","url":"https://poojapc123.github.io/","email":"mailto:poojachinchansur3443@gmail.com","telephone":"+91 7619403443","address":{"@type":"PostalAddress","addressLocality":"Bangalore","addressRegion":"Karnataka","addressCountry":"IN"},"workLocation":{"@type":"Place","name":"Bangalore, Karnataka, India"},"sameAs":["https://linkedin.com/in/pooja-chinchansur-44378222a","https://github.com/poojapc123"],"hasOccupation":{"@type":"Occupation","name":"Full-Stack Developer","skills":"JavaScript, TypeScript, Python, Java, Dart, SQL, C++, HTML5, CSS3, Node.js, NestJS, Express, Flask, Spring Boot, REST API design, JWT authentication, role-based access control (RBAC), Mongoose, WebSockets (Socket.IO), payment webhooks, cron jobs, Puppeteer, Swagger/OpenAPI, Postman, React, Next.js, Ant Design, Bootstrap, SCSS, responsive design, server-side rendering, Flutter, Dart, GetX, Android and iOS builds, Firebase Cloud Messaging, push notifications, localization, Figma design-to-code, MongoDB, MySQL, Redis, schema and index design, aggregation pipelines, geospatial queries, query optimization, AWS, Docker, Kubernetes, Linux and Windows Server administration, Apache, Nginx, PM2, CI/CD, Git, GitHub, Google Play Console, Razorpay, Stripe, Cashfree, Twilio, Firebase, Google Maps Platform, Anthropic Claude API, VAPT, OWASP Top 10, SQL Injection, XSS, CSRF, secure code review, rate limiting, security headers, secrets management, TLS/SSL, Burp Suite, OWASP ZAP, Kali Linux, Nmap, Nessus, Splunk (SIEM), Wireshark, Agile/Scrum, SSDLC, unit testing"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Sharnbasva University, Kalaburagi"}],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Advanced Certificate Course in Cyber Security (HPC), C-DAC Bangalore"},{"@type":"EducationalOccupationalCredential","name":"Java Full Stack Developer, Edubridge Learning with Capgemini (Spring Boot, AWS)"},{"@type":"EducationalOccupationalCredential","name":"AWS Academy Graduate, AWS Academy Cloud Foundations"}],"knowsLanguage":["English","Hindi","Kannada","Telugu"],"knowsAbout":["Node.js","NestJS","TypeScript","Next.js","React","Flutter","Dart","MongoDB","Redis","REST APIs","Payment gateway integration","Application Security","OWASP Top 10"],"subjectOf":{"@type":"DigitalDocument","name":"Pooja Chinchansur - Resume","url":"https://poojapc123.github.io/Pooja_Chinchansur_Resume.pdf","encodingFormat":"application/pdf"}}</script>
@@ -226,9 +226,17 @@ a { color: inherit; }
 /* ---------- projects ---------- */
 .projects { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
 @media (min-width: 52rem) { .projects { grid-template-columns: 1fr 1fr; } }
-.project { background: var(--surface); padding: 1.4rem; display: grid; gap: .45rem; align-content: start; }
+.project { background: var(--surface); padding: 1.4rem; display: grid; gap: .55rem; align-content: start; }
 .project__name { font-size: 1.2rem; }
-.project p:last-child { color: var(--ink-2); font-size: .96rem; }
+.project__where { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.project__desc { color: var(--ink); }
+.project__points { margin: 0; padding: 0; list-style: none; display: grid; gap: .4rem; color: var(--ink-2); font-size: .94rem; }
+.project__points li { position: relative; padding-left: 1.1rem; }
+.project__points li::before {
+  content: ""; position: absolute; left: 0; top: .6em;
+  width: 5px; height: 5px; background: var(--accent);
+}
+.project__tech { margin-top: .3rem; }
 
 /* ---------- credentials ---------- */
 .creds { display: grid; gap: 1.6rem; }
@@ -292,7 +300,7 @@ a { color: inherit; }
   <div class="wrap">
     <p class="masthead__role">Full-stack developer · web, mobile, application security</p>
     <h1 class="masthead__name">Pooja Chinchansur</h1>
-    <p class="masthead__lead">I build and secure production web and mobile systems. Right now that is a live ride-hailing platform: a 406-route NestJS API, Next.js admin and fleet portals, and Flutter driver and customer apps on one backend - including the driver app&#39;s Google Play release and a second API service brought onto the live stack.</p>
+    <p class="masthead__lead">I build and secure web and mobile applications end to end: REST APIs, web front ends, Flutter apps and the servers they run on. My work so far covers a production ride-hailing platform, a company website on Flask, Java Spring Boot web applications, and web-application penetration testing at C-DAC.</p>
     <ul class="facts" aria-label="At a glance"><li>Bangalore, India</li><li>1+ year production experience</li><li>M.Tech CSE, Gold Medalist</li><li>Open to full-stack roles</li></ul>
     <div class="actions">
       <a class="btn btn--primary" href="mailto:poojachinchansur3443@gmail.com">Get in touch</a>
@@ -305,202 +313,68 @@ a { color: inherit; }
 
 <main id="main">
 
-  <section class="section" id="now">
-    <div class="wrap section__grid">
-      <div class="section__head">
-        <p class="stamp">Now &middot; September 2026</p>
-        <h2 class="section__title">What I am working on</h2>
-      </div>
-      <ul class="now__list">
-        <li class="now__item">
-          <h3 class="now__title">Shipping the driver app</h3>
-          <p class="now__text">Google Play release 1.1.13: 20+ screens rebuilt from Figma with GetX in 10 Indian languages, onboarding and ride-request fixes, data-only push delivery in the background, signed AAB and store checklist delivered.</p>
-        </li>
-        <li class="now__item">
-          <h3 class="now__title">Bringing the new customer app live</h3>
-          <p class="now__text">A second NestJS service (the customer API) deployed behind Apache and PM2 next to the shared booking API, the Flutter customer app routed per environment, and Android and iOS store-readiness fixes.</p>
-        </li>
-        <li class="now__item">
-          <h3 class="now__title">Driver Pass and driver-facing features</h3>
-          <p class="now__text">Subscription purchase through Razorpay, Cashfree and Stripe with webhook activation; SOS, personal-insurance nomination, earnings history, outstation requests and an AI support assistant on the Claude API.</p>
-        </li>
-        <li class="now__item">
-          <h3 class="now__title">Running production</h3>
-          <p class="now__text">Dist-only deployments with timestamped backups and rollback, live hot-fixes folded back into source, version control introduced for four codebases, and an iOS build handoff for the Mac.</p>
-        </li>
-        <li class="now__item">
-          <h3 class="now__title">Next</h3>
-          <p class="now__text">An Admin &quot;Service management&quot; page so every service setting is owned by the dashboard, the API and the database - nothing hardcoded in the apps.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
 
-  <section class="section" id="measured">
+  <section class="section" id="projects">
     <div class="wrap section__grid">
       <div class="section__head">
-        <p class="stamp">Measured</p>
-        <h2 class="section__title">Results, in numbers</h2>
+        <p class="stamp">Work samples</p>
+        <h2 class="section__title">Projects</h2>
+        <p class="section__aside">From my jobs and internships, newest first.</p>
       </div>
-      <div>
-        <ul class="metrics">
-        <li class="metric">
-          <p class="metric__label">PDF invoice render</p>
-          <div class="metric__row">
-            <span class="metric__from">2.94 s</span>
-            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
-            <span class="metric__to">614 ms</span>
-          </div>
-          <div class="gauge" role="img" aria-label="before 2.94 s, after 614 ms">
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:21%"></span></div>
-          </div>
-          <p class="metric__note">One shared headless browser instead of one launched per document. 4.8x faster after the first render.</p>
-        </li>
-        <li class="metric">
-          <p class="metric__label">Admin bookings payload</p>
-          <div class="metric__row">
-            <span class="metric__from">10,503 B</span>
-            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
-            <span class="metric__to">779 B</span>
-          </div>
-          <div class="gauge" role="img" aria-label="before 10,503 B, after 779 B">
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:7%"></span></div>
-          </div>
-          <p class="metric__note">gzip response compression, loaded defensively so a missing module warns instead of stopping the API booting.</p>
-        </li>
-        <li class="metric">
-          <p class="metric__label">Live currency calls per fare quote</p>
-          <div class="metric__row">
-            <span class="metric__from">1</span>
-            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
-            <span class="metric__to">0</span>
-          </div>
-          <div class="gauge" role="img" aria-label="before 1, after 0">
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:0%"></span></div>
-          </div>
-          <p class="metric__note">12-hour cache, in-flight de-duplication, last-known-good rates so quotes survive provider outages.</p>
-        </li>
-        <li class="metric">
-          <p class="metric__label">Outbound calls with a deadline</p>
-          <div class="metric__row">
-            <span class="metric__from">0 of 26</span>
-            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
-            <span class="metric__to">26 of 26</span>
-          </div>
-          <div class="gauge" role="img" aria-label="before 0 of 26, after 26 of 26">
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:0%"></span></div>
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:100%"></span></div>
-          </div>
-          <p class="metric__note">15s globally, 6s for Google Maps on booking and dispatch paths. Previously every call could hang indefinitely.</p>
-        </li>
-        <li class="metric">
-          <p class="metric__label">Deleted drivers blocking Aadhaar re-registration</p>
-          <div class="metric__row">
-            <span class="metric__from">198</span>
-            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
-            <span class="metric__to">0</span>
-          </div>
-          <div class="gauge" role="img" aria-label="before 198, after 0">
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:0%"></span></div>
-          </div>
-          <p class="metric__note">Duplicate checks and two unique indexes counted soft-deleted accounts. Archived their numbers on delete and excluded them from the check.</p>
-        </li>
-        <li class="metric">
-          <p class="metric__label">Live sessions on one fleet account</p>
-          <div class="metric__row">
-            <span class="metric__from">43</span>
-            <span class="metric__arrow" aria-hidden="true">&rarr;</span>
-            <span class="metric__to">1</span>
-          </div>
-          <div class="gauge" role="img" aria-label="before 43, after 1">
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--before" style="--w:100%"></span></div>
-            <div class="gauge__track"><span class="gauge__fill gauge__fill--after" style="--w:3%"></span></div>
-          </div>
-          <p class="metric__note">Fleet logins never expired or replaced older sessions. Purged to the newest per account and moved the app-to-portal handoff into a URL fragment that never reaches server logs.</p>
-        </li>
-        </ul>
+      <div class="projects">
+      <article class="project">
+        <h3 class="project__name">Ride-Hailing and Logistics Platform</h3>
+        <p class="project__where">Freelance contract · 2026 - present</p>
+        <p class="project__desc">Booking platform for rides, parcel delivery, intercity trips and rentals: a rider app, a driver app, and admin and fleet-owner web portals on one backend.</p>
+        <ul class="project__points"><li>Sole developer across the REST API, both Next.js portals and both Flutter apps.</li><li>Delivered the driver app&#39;s Google Play release: 20+ screens built from Figma, 10 languages, background push notifications.</li><li>Subscription payments through Razorpay, Cashfree and Stripe, activated by payment webhooks.</li><li>Measured performance work: PDF rendering from 2.94 s to 614 ms, API response payloads 92.6% smaller.</li></ul>
+        <p class="stamp project__tech">NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter</p>
+        
+      </article>
+      <article class="project">
+        <h3 class="project__name">Company Website - gundal.in</h3>
+        <p class="project__where">Gundal Business · 2025 - 2026</p>
+        <p class="project__desc">The company&#39;s public website, built and maintained end to end, from the responsive front end to the Flask services behind it.</p>
+        <ul class="project__points"><li>Responsive front end in HTML5, CSS3, JavaScript and Bootstrap.</li><li>Flask REST services with request validation and structured error handling.</li><li>Ran the server after launch: patching, scheduled backups, hardening and SQL query tuning.</li></ul>
+        <p class="stamp project__tech">Python, Flask, JavaScript, Bootstrap, MySQL</p>
+        <p class="project__link"><a class="btn" href="https://gundal.in" target="_blank" rel="noopener noreferrer">Visit gundal.in <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a></p>
+      </article>
+      <article class="project">
+        <h3 class="project__name">Web Application Penetration Test</h3>
+        <p class="project__where">C-DAC internship · 2024 - 2025</p>
+        <p class="project__desc">Black-box and authenticated penetration test of a web application, from reconnaissance to a remediation report.</p>
+        <ul class="project__points"><li>Reconnaissance and port scanning with Nmap, Nessus and Nikto; manual testing in Burp Suite and OWASP ZAP.</li><li>Found and exploited SQL injection, XSS, CSRF and broken authentication.</li><li>Report mapping each finding to the OWASP Top 10 with severity and fix steps; retested fixes through to closure.</li></ul>
+        <p class="stamp project__tech">Kali Linux, Burp Suite, OWASP ZAP, Nmap, Nessus, Nikto</p>
+        
+      </article>
+      <article class="project">
+        <h3 class="project__name">Security Monitoring, Forensics and PKI Lab</h3>
+        <p class="project__where">C-DAC internship · 2024 - 2025</p>
+        <p class="project__desc">Hands-on security operations work alongside the penetration testing programme.</p>
+        <ul class="project__points"><li>Monitored and investigated events in Splunk and OSSIM (SIEM).</li><li>Digital forensics with Autopsy, FTK Imager and Wireshark, written up as remediation reports.</li><li>Built and managed a public key infrastructure with digital certificates using XCA and Keytool; applied cryptography with OpenSSL.</li></ul>
+        <p class="stamp project__tech">Splunk, OSSIM, Wireshark, Autopsy, FTK Imager, OpenSSL</p>
+        
+      </article>
+      <article class="project">
+        <h3 class="project__name">Java Full-Stack Web Applications</h3>
+        <p class="project__where">Edubridge with Capgemini · 2024</p>
+        <p class="project__desc">Full-stack web applications on Spring Boot (MVC) and MySQL, built during the Java full-stack internship.</p>
+        <ul class="project__points"><li>REST APIs on Spring Boot over a MySQL database.</li><li>Login, session handling and role-based access control.</li><li>HTML, CSS and JavaScript front ends; SQL query tuning.</li></ul>
+        <p class="stamp project__tech">Java, Spring Boot, MySQL, HTML, CSS, JavaScript</p>
+        
+      </article>
+      <article class="project">
+        <h3 class="project__name">Twitter Analytics Dashboard</h3>
+        <p class="project__where">VK REVER internship · 2024</p>
+        <p class="project__desc">Interactive Power BI dashboard of Twitter performance data.</p>
+        <ul class="project__points"><li>Impressions, engagement by country and top-performing content in one view.</li><li>Data cleaning, modelling and visualisation design.</li></ul>
+        <p class="stamp project__tech">Power BI</p>
+        
+      </article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="cases">
-    <div class="wrap section__grid">
-      <div class="section__head">
-        <p class="stamp">Case studies</p>
-        <h2 class="section__title">Selected case studies</h2>
-        <p class="section__aside">Real production incidents, told end to end.</p>
-      </div>
-      <div class="cases">
-      <article class="case">
-        <h3 class="case__title">A performance pass where every number was measured</h3>
-        <p class="stamp">NestJS, Puppeteer, MongoDB</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>The admin dashboard and both apps felt slow, but nothing was instrumented and the usual suspects were innocent - indexes, the Redis session cache and the driver location pings all turned out to be sound.</dd>
-          <dt>What I did</dt><dd>Audited the whole request path. Replaced a Chrome launch per PDF with one shared instance capped at four concurrent renders, cached exchange rates for twelve hours with in-flight de-duplication and last-known-good fallbacks, put deadlines on all 26 outbound HTTP calls, enabled gzip, and configured the Mongo connection pool and socket timeout.</dd>
-          <dt>Result</dt><dd class="case__result">PDF rendering fell from 2.94s to 614ms, the admin bookings payload shrank 92.6%, and the live currency call disappeared from every fare quote. Every change measured before and after.</dd>
-        </dl>
-      </article>
-      <article class="case">
-        <h3 class="case__title">The GST that quietly became zero</h3>
-        <p class="stamp">NestJS, Redis, production debugging</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>A projected read was writing a partial app-configuration document under the shared cache key. Every later reader got a document with no tax field, so GST silently dropped to zero on customer fare quotes. Booking quotes hit that key constantly, so the cache stayed poisoned almost permanently.</dd>
-          <dt>What I did</dt><dd>Traced a wrong fare back through the quote path into the cache layer, and stopped projected reads from ever populating the shared key.</dd>
-          <dt>Result</dt><dd class="case__result">Fares charge the correct tax again. Nothing had ever thrown an error - the only symptom was revenue quietly going missing.</dd>
-        </dl>
-      </article>
-      <article class="case">
-        <h3 class="case__title">The login that undid itself</h3>
-        <p class="stamp">Flutter, NestJS guards, on-device debugging</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>Drivers entered the OTP, reached Home, and were thrown back to Sign Up a moment later - on every launch. The token was being saved correctly, which made the symptom look impossible from the client code alone.</dd>
-          <dt>What I did</dt><dd>Read the device log instead. On Home load one earnings endpoint answered 401 &quot;no permission&quot; from a role guard while every other call on the same token returned 200. The client treated any 401 or 403 as an expired session, navigated to login and wiped the token it had stored 300 ms earlier. Narrowed the logout to a genuine dead session - an &quot;unauthorized&quot; error code or a failed profile read - and left resource denials alone. Then found the production API was a stale build whose driver routes sat under an admin wildcard, and redeployed it with a backup and a rollback path.</dd>
-          <dt>Result</dt><dd class="case__result">Login sticks. Two bugs behind one symptom: a client that over-reacted and a server that had never been deployed.</dd>
-        </dl>
-      </article>
-      <article class="case">
-        <h3 class="case__title">Notifications that never popped</h3>
-        <p class="stamp">Firebase Cloud Messaging, Android channels</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>Every push landed in the in-app inbox, so the backend looked fine, yet nothing ever showed on the phone. Drivers missed cancellations and general alerts.</dd>
-          <dt>What I did</dt><dd>The backend sent a channel id with a typo, so Android fell back to a default channel at normal importance - tray only, no banner. Fixed the id and priority on the server, created the high-importance channel natively on app start so it exists before the first push, and sequenced the two Android permission prompts so the second was no longer dropped. Ride requests and cancellations then moved to data-only high-priority messages handled by the app&#39;s own background service, with a native player for the cancellation voice.</dd>
-          <dt>Result</dt><dd class="case__result">Banners, ringtone and the cancel voice work in the foreground, in the background and after the app is swiped away - verified on a real device rather than from the inbox rows.</dd>
-        </dl>
-      </article>
-      <article class="case">
-        <h3 class="case__title">A second API on a live host, with no DNS to spare</h3>
-        <p class="stamp">Apache, PM2, NestJS, Flutter</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>A new customer app arrived with its own NestJS service on another port, sharing a JWT secret and a database with the existing booking API. It had to go live on the existing server with no wildcard DNS and no disruption to the driver app.</dd>
-          <dt>What I did</dt><dd>Audited both stacks and wrote a working/broken report before touching code: which routes could move to the new service (auth, profile, places, share-tracking) and which had to stay on the shared API (quotes, bookings, dispatch, sockets, wallet, payments). Exposed the new service as a PM2 app behind path-based Apache proxy rules on the existing API host, gave the Flutter app a per-environment customer-API base URL, and staged install and vhost scripts with backups, config tests and rollback for the owner to run.</dd>
-          <dt>Result</dt><dd class="case__result">Verified end to end against production from an emulator - OTP login on the new service, the token accepted by the legacy API, a booking created and dispatched, push delivered, the public share-tracking page served, uploads landing in object storage. The driver app was never touched.</dd>
-        </dl>
-      </article>
-      <article class="case">
-        <h3 class="case__title">An audit trail the business can actually read</h3>
-        <p class="stamp">NestJS interceptors, data privacy</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>The first version of the staff audit log stored raw request bodies - including login credentials in plaintext - and recorded driver and customer app traffic, where location pings alone produced around 27,000 rows a day and buried the staff activity the log existed for.</dd>
-          <dt>What I did</dt><dd>Redacted the bodies, migrated the stored credentials out, scoped recording to staff only, and rebuilt the entry itself: which record changed, which fields changed, and their before and after values, with CSV export. Made logging best-effort, so a failure while recording can never roll back the action it is recording.</dd>
-          <dt>Result</dt><dd class="case__result">A log an operations manager can read - &quot;Driver / via Admin&quot;, and the exact fields that changed - instead of URL fragments and IP addresses.</dd>
-        </dl>
-      </article>
-      <article class="case">
-        <h3 class="case__title">Knowing when to roll back</h3>
-        <p class="stamp">RBAC, release judgement</p>
-        <dl class="case__body">
-          <dt>Problem</dt><dd>A granular module.action permission system replaced whole-module grants across the API and the admin panel. Within hours it locked fleet owners out of routes their deployed portal depends on, then cost staff accounts endpoints they had been using daily.</dd>
-          <dt>What I did</dt><dd>Reverted the permission model to what was already deployed rather than keep patching live access, then re-shipped only the part with clear value - grant and revoke - on top of the working system. A global validation pipe enabled the same week had switched on 411 validators that had never once run and was failing every driver edit; that came out the same morning, with the safe re-enable sequence written into the code.</dd>
-          <dt>Result</dt><dd class="case__result">Access restored the same day, the useful half of the change kept, and the rollback documented so the upgrade can be retried deliberately instead of abandoned.</dd>
-        </dl>
-      </article>
-      </div>
-    </div>
-  </section>
+
 
   <section class="section" id="work">
     <div class="wrap section__grid">
@@ -519,7 +393,7 @@ a { color: inherit; }
           <h3 class="role__company">Freelance (Contract)</h3>
           <p class="role__title">Full-Stack Developer, Ride-Hailing Platform</p>
           
-          <ul class="role__points"><li>Sole developer on five production applications on one backend: a 406-route NestJS/TypeScript REST API over MongoDB and Redis, Next.js admin and fleet-owner portals, and Flutter driver and customer apps for Android and iOS.</li><li>Delivered the driver app&#39;s Google Play release (v1.1.13): rebuilt 20+ screens from Figma with GetX in 10 languages, fixed onboarding, ride-request queuing and accept-time eligibility checks, and made ride requests and cancellations data-only high priority FCM pushes that reach the app in the background.</li><li>Built features end to end: Driver Pass subscriptions (Razorpay, Cashfree and Stripe orders activated by payment webhook, admin-managed plans), outstation dispatch, SOS, and an AI support assistant on the Claude API grounded in admin FAQs and the driver&#39;s account state.</li><li>Integrated a new customer app and a second NestJS service into production: split routes between the customer API and the shared booking API, deployed it behind Apache reverse proxy and PM2, and verified login, booking, dispatch, push and share-tracking on the live stack.</li><li>Measured performance pass: PDF rendering 2.94 s to 614 ms (4.8x) with a shared headless Chrome pool, admin bookings payload 10,503 to 779 bytes (92.6%) with gzip, deadlines on all 26 outbound HTTP calls, exchange-rate caching with last-known-good fallback, MongoDB pool tuning.</li><li>Hardened API security and auditability: Helmet headers, rate limiting on OTP and login, JWT secret in environment config, an audit of all 406 endpoints closing unguarded routes, and a staff audit trail with before/after values and CSV export; fixed a cache bug that silently zeroed GST on fares.</li></ul>
+          <ul class="role__points"><li>Sole developer on five production applications on one backend: a 406-route NestJS/TypeScript REST API over MongoDB and Redis, Next.js admin and fleet-owner portals, and Flutter driver and customer apps for Android and iOS.</li><li>Delivered the driver app&#39;s Google Play release (v1.1.13): rebuilt 20+ screens from Figma with GetX in 10 languages, fixed onboarding, ride-request queuing and accept-time eligibility checks, and made ride requests and cancellations data-only high priority FCM pushes that reach the app in the background.</li><li>Built features end to end: Driver Pass subscriptions (Razorpay, Cashfree and Stripe orders activated by payment webhook, admin-managed plans), outstation dispatch, SOS, and an AI support assistant on the Claude API grounded in admin FAQs and the driver&#39;s account state.</li></ul>
         </div>
       </article>
       <article class="role" id="gundal-business-private-limited">
@@ -621,41 +495,6 @@ a { color: inherit; }
     </div>
   </section>
 
-  <section class="section" id="projects">
-    <div class="wrap section__grid">
-      <div class="section__head">
-        <p class="stamp">Built</p>
-        <h2 class="section__title">Projects</h2>
-      </div>
-      <div class="projects">
-      <article class="project">
-        <h3 class="project__name">Ride-Hailing and Logistics Platform</h3>
-        <p class="stamp">NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter, Dart</p>
-        <p>Rides, parcel delivery, intercity, hourly and daily rentals: distance-slab fare calculation with manual override, geofenced service areas, nearest-first driver dispatch, WebSocket live tracking, multi-gateway payments (Razorpay, Stripe, Cashfree), Driver Pass subscriptions, an AI support assistant, SOS, a public share-tracking page, staff audit logging, granular RBAC, and the Flutter driver and customer apps.</p>
-        
-      </article>
-      <article class="project">
-        <h3 class="project__name">Corporate Web Platform - gundal.in</h3>
-        <p class="stamp">Python, Flask, JavaScript, Bootstrap, MySQL</p>
-        <p>Company website and Flask REST backend covering responsive UI, API design, database schema, deployment, and post-launch server administration and hardening.</p>
-        
-      </article>
-      <article class="project">
-        <h3 class="project__name">Web Application VAPT Engagement</h3>
-        <p class="stamp">Kali Linux, Burp Suite, OWASP ZAP, Nessus, Nikto</p>
-        <p>Black-box and authenticated penetration test: reconnaissance, port scanning, manual and automated vulnerability discovery, exploitation of SQL Injection and XSS, and a report mapping each finding to OWASP Top 10 with severity and remediation steps.</p>
-        
-      </article>
-      <article class="project">
-        <h3 class="project__name">Twitter Data Analysis Dashboard</h3>
-        <p class="stamp">Power BI</p>
-        <p>Modeled and visualized social media performance data, producing engagement, reach, and geography views that identified the highest-performing content.</p>
-        
-      </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="record">
     <div class="wrap section__grid">
       <div class="section__head">
@@ -709,7 +548,7 @@ a { color: inherit; }
   </section>
 
   <div class="wrap">
-    <p class="colophon">Bangalore, Karnataka, India &nbsp;&middot;&nbsp; Last updated 17 September 2026</p>
+    <p class="colophon">Bangalore, Karnataka, India &nbsp;&middot;&nbsp; Last updated 21 September 2026</p>
   </div>
 
 </main>
