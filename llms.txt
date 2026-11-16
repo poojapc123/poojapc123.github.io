@@ -76,23 +76,20 @@ Remote | Jan 2024 - Aug 2024
 ### U-Trav - Ride-Hailing and Logistics Platform
 Freelance contract · 2026 - present | NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter
 
-Complete, live booking platform for rides, parcel delivery, intercity trips, tours and rentals: a rider app, a driver app, an admin panel and a fleet-owner portal on one backend.
-- My part: the whole backend API, the complete driver app, and the integration of the rider app and admin panel with the live API (their UI was by a teammate); I also deploy and run all of it on the production server, with every codebase in Git.
-- Both apps are live on Google Play: U-Trav Driver (10K+ downloads) and the U-Trav rider app (1K+).
-- Driver app: 20+ screens built from Figma, 10 languages, background ride-request alerts. Rider app: backend and integration for live ride tracking, SOS and in-ride destination change.
-- Subscription payments through Razorpay, Cashfree and Stripe, activated by payment webhooks; PDF rendering cut from 2.94 s to 614 ms.
-- Server and hosting setup: a DigitalOcean droplet with a reserved IP running the APIs, admin panel, fleet portal and websites behind Apache virtual hosts and PM2, with Let's Encrypt HTTPS, domain DNS records, fail2ban and backups moved off-server.
-- Messaging and services setup: MSG91 OTP SMS with DLT-approved templates and a WhatsApp Business number connected through MSG91, Firebase push notifications, Razorpay payment keys, MongoDB Atlas and Google Play Console releases.
+A complete, live booking platform for rides, parcels, intercity trips, tours and rentals: rider app, driver app, admin panel and fleet-owner portal on one backend.
+- Driver app: 20+ screens built from Figma, 10 Indian languages, ride alerts that ring even when the app is closed.
+- Payments: Driver Pass subscriptions through Razorpay, Cashfree and Stripe, activated by payment webhooks.
+- Runs on a DigitalOcean server: Apache, PM2, HTTPS, MSG91 SMS and WhatsApp, Firebase push and MongoDB Atlas, all set up by me.
 U-Trav Driver on Google Play: https://play.google.com/store/apps/details?id=com.utrav.driver
 U-Trav rider app on Google Play: https://play.google.com/store/apps/details?id=com.utrav.user
 
 ### Company Websites - utrav.in and 1us.co.in
 U-Trav and 1us · 2026 | React, Vite, Next.js, Apache, Let's Encrypt, Git
 
-Took the platform's website and its parent company's website live on our own server. The UI of both was designed and coded by teammates; the content, integration and hosting were mine.
-- 1us.co.in: wrote all the site content and company information, converted the Next.js site to a static export, and hosted it with HTTPS (Let's Encrypt, auto-renewing) after pointing the domain's DNS at the server.
-- utrav.in: replaced the old WordPress site with the new React/Vite site, kept the privacy, terms and account-deletion pages that Google Play links to working, and kept app-link verification files in place.
-- Deployment scripts with backups and one-step rollback, and all the code and content pushed to Git.
+Took the platform's website and its parent company's website live on our own server.
+- 1us.co.in: wrote the content, made the Next.js site a static export, pointed the domain at the server and added HTTPS.
+- utrav.in: replaced the old WordPress site and kept the privacy, terms and account-deletion pages Google Play links to.
+- Deploy scripts with backups and one-step rollback; all code and content in Git.
 Visit utrav.in: https://utrav.in
 Visit 1us.co.in: https://1us.co.in
 
@@ -100,9 +97,8 @@ Visit 1us.co.in: https://1us.co.in
 Personal project · 2026 | HTML, CSS, JavaScript, Node.js, Razorpay, Vercel
 
 Redesign of a Bangalore tea retailer's website as a complete online store.
-- 13-page responsive storefront: shop, product pages, cart, checkout, and catering and franchise enquiry forms.
-- Razorpay checkout through four Node.js serverless functions, with cash on delivery as an option.
-- Prices are recalculated on the server, so a tampered request is still charged correctly; payments are verified by HMAC-SHA256 signature, with a webhook as backup.
+- Shop, product pages, cart, checkout, and catering and franchise enquiry forms.
+- Razorpay checkout with prices recalculated on the server and payments verified by HMAC signature.
 - A demo mode runs the whole checkout without payment keys.
 
 ### Matrix - Internal Operations Application
