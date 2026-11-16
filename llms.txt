@@ -41,10 +41,11 @@ Bangalore, India | Sep 2025 - Apr 2026
 - Developed and maintained the company website (gundal.in) end to end: responsive HTML5, CSS3, JavaScript and Bootstrap front end on Python (Flask) REST services with request validation and structured error handling.
 - Administered and secured servers, systems and databases: patching, scheduled backups with restore testing, uptime monitoring, role-based access policies and hardening baselines; optimized SQL queries to cut page load times.
 
-### Kalvium - Mentor, Pre-Joining Learning Program (B.Tech students)
-Remote | Mar 2025 - Jun 2025
+### Kalvium - Mentor, B.Tech Program (onsite at Alliance University)
+Bengaluru, India | Mar 2025 - Sep 2025
 
-- Mentored B.Tech students through Kalvium's pre-joining learning program covering frontend web development, object-oriented programming and DBMS: guided their Java, Python and C++ coding assignments and ran the technical assessments in which they defended their work.
+- Completed Kalvium's 3-month remote mentor training and a 1-month bootcamp, then worked full time onsite at Alliance University, Bengaluru, as a mentor for B.Tech students.
+- Mentored students in frontend web development, object-oriented programming and DBMS: guided their Java, Python and C++ coding assignments and ran the technical assessments in which they defended their work.
 
 ### C-DAC (Centre for Development of Advanced Computing) - Cybersecurity Intern
 Bangalore, India | Sep 2024 - Feb 2025
