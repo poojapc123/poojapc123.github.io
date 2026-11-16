@@ -73,15 +73,23 @@ Remote | Jan 2024 - Aug 2024
 
 ## Projects
 
-### U-Trav - Ride-Hailing and Logistics Platform
-Freelance contract · 2026 - present | NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter
+### U-Trav Driver - Driver App and Platform Backend
+Freelance contract · 2026 - present | Flutter, GetX, NestJS, TypeScript, MongoDB, Redis, Firebase
 
-A complete, live booking platform for rides, parcels, intercity trips, tours and rentals: rider app, driver app, admin panel and fleet-owner portal on one backend.
-- Driver app: 20+ screens built from Figma, 10 Indian languages, ride alerts that ring even when the app is closed.
-- Payments: Driver Pass subscriptions through Razorpay, Cashfree and Stripe, activated by payment webhooks.
+The driver side of U-Trav, a complete and live platform for rides, parcels, intercity trips, tours and rentals.
+- 20+ screens built from Figma in 10 Indian languages, with ride alerts that ring even when the app is closed.
+- Driver Pass subscriptions through Razorpay, Cashfree and Stripe, activated by payment webhooks.
 - Runs on a DigitalOcean server: Apache, PM2, HTTPS, MSG91 SMS and WhatsApp, Firebase push and MongoDB Atlas, all set up by me.
 U-Trav Driver on Google Play: https://play.google.com/store/apps/details?id=com.utrav.driver
-U-Trav rider app on Google Play: https://play.google.com/store/apps/details?id=com.utrav.user
+
+### U-Trav - Customer App
+Freelance contract · 2026 - present | Flutter, NestJS, Google Maps, Firebase, Razorpay
+
+The rider app: book local rides, rentals, airport trips and outstation tours, choose a vehicle and pay.
+- Live ride tracking with SOS, change of destination mid-ride and push notifications for every ride step.
+- Outstation advance payment by UPI and Razorpay, and India-only place search.
+- Its own NestJS customer API deployed beside the main booking API behind Apache and PM2.
+U-Trav on Google Play: https://play.google.com/store/apps/details?id=com.utrav.user
 
 ### Company Websites - utrav.in and 1us.co.in
 U-Trav and 1us · 2026 | React, Vite, Next.js, Apache, Let's Encrypt, Git

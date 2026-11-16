@@ -156,6 +156,7 @@ img { display: block; max-width: 100%; height: auto; }
 .show { display: grid; gap: 2.5rem; align-items: center; }
 @media (min-width: 62rem) {
   .show { grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: start; }
+  .show--flip { grid-template-columns: .9fr 1.1fr; }
   .show--flip .show__media { order: 2; }
   .show__media { position: sticky; top: 6rem; min-height: 30rem; }
   .show:has(.vis--phones) .show__media { min-height: 40rem; }
@@ -336,7 +337,7 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="float float--c"><span class="dot"></span><div><b>Live in production</b><span>DigitalOcean · HTTPS</span></div></div>
       </div>
     </div>
-    <div class="wrap"><ul class="stats"><li><b>10K+</b><span>Driver app downloads on Google Play</span></li><li><b>406</b><span>API routes I own in production</span></li><li><b>2</b><span>Apps live on Google Play</span></li><li><b>Gold</b><span>Medalist, M.Tech CSE</span></li></ul></div>
+    <div class="wrap"><ul class="stats"><li><b>10K+</b><span>Driver app downloads on Google Play</span></li><li><b>406</b><span>API routes I own in production</span></li><li><b>3.3K</b><span>Monthly active devices across both apps</span></li><li><b>Gold</b><span>Medalist, M.Tech CSE</span></li></ul></div>
   </section>
 
   <section class="marquee" aria-label="Tools I work with">
@@ -354,23 +355,42 @@ img { display: block; max-width: 100%; height: auto; }
       <article class="show" id="p-1">
         <div class="show__media">
           <div class="vis vis--phones">
-            <figure class="phone phone--0"><img src="img/driver-home.jpg" alt="U-Trav - screen 1" loading="lazy" width="520" height="844"></figure>
-            <figure class="phone phone--1"><img src="img/driver-pass.jpg" alt="U-Trav - screen 2" loading="lazy" width="520" height="844"></figure>
-            <figure class="phone phone--2"><img src="img/driver-earnings.jpg" alt="U-Trav - screen 3" loading="lazy" width="520" height="844"></figure>
+            <figure class="phone phone--0"><img src="img/driver-home.jpg" alt="U-Trav Driver - screen 1" loading="lazy" width="520" height="844"></figure>
+            <figure class="phone phone--1"><img src="img/driver-pass.jpg" alt="U-Trav Driver - screen 2" loading="lazy" width="520" height="844"></figure>
+            <figure class="phone phone--2"><img src="img/driver-earnings.jpg" alt="U-Trav Driver - screen 3" loading="lazy" width="520" height="844"></figure>
           </div>
         </div>
         <div class="show__text">
           <p class="eyebrow"><span class="num">01</span> Freelance contract · 2026 - present</p>
-          <h3 class="show__title">U-Trav<span>Ride-Hailing and Logistics Platform</span></h3>
-          <p class="show__desc">A complete, live booking platform for rides, parcels, intercity trips, tours and rentals: rider app, driver app, admin panel and fleet-owner portal on one backend.</p>
-          <ul class="kpis"><li><b>10K+</b><span>driver app downloads</span></li><li><b>1K+</b><span>rider app downloads</span></li><li><b>406</b><span>API routes I own</span></li><li><b>10</b><span>app languages</span></li></ul>
-          <ul class="ticks"><li>Driver app: 20+ screens built from Figma, 10 Indian languages, ride alerts that ring even when the app is closed.</li><li>Payments: Driver Pass subscriptions through Razorpay, Cashfree and Stripe, activated by payment webhooks.</li><li>Runs on a DigitalOcean server: Apache, PM2, HTTPS, MSG91 SMS and WhatsApp, Firebase push and MongoDB Atlas, all set up by me.</li></ul>
-          <p class="myrole"><b>My role</b>The whole backend API and the complete driver app. I connected the rider app and admin panel (UI by a teammate) to the live API, and I deploy and run all of it.</p>
-          <ul class="chips" aria-label="Tech stack"><li>NestJS</li><li>TypeScript</li><li>MongoDB</li><li>Redis</li><li>Next.js</li><li>Flutter</li></ul>
-          <p class="show__links"><a class="btn btn--solid" href="https://play.google.com/store/apps/details?id=com.utrav.driver" target="_blank" rel="noopener noreferrer">U-Trav Driver on Google Play <svg class="ic ic--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span class="sr">(opens in a new tab)</span></a><a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.utrav.user" target="_blank" rel="noopener noreferrer">U-Trav rider app on Google Play <svg class="ic ic--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span class="sr">(opens in a new tab)</span></a></p>
+          <h3 class="show__title">U-Trav Driver<span>Driver App and Platform Backend</span></h3>
+          <p class="show__desc">The driver side of U-Trav, a complete and live platform for rides, parcels, intercity trips, tours and rentals.</p>
+          <ul class="kpis"><li><b>10K+</b><span>downloads</span></li><li><b>2.99K</b><span>monthly active devices</span></li><li><b>406</b><span>API routes I own</span></li><li><b>10</b><span>app languages</span></li></ul>
+          <ul class="ticks"><li>20+ screens built from Figma in 10 Indian languages, with ride alerts that ring even when the app is closed.</li><li>Driver Pass subscriptions through Razorpay, Cashfree and Stripe, activated by payment webhooks.</li><li>Runs on a DigitalOcean server: Apache, PM2, HTTPS, MSG91 SMS and WhatsApp, Firebase push and MongoDB Atlas, all set up by me.</li></ul>
+          <p class="myrole"><b>My role</b>The complete driver app and the whole backend API behind the platform - rider app, driver app, admin panel and fleet portal. I also deploy and run all of it.</p>
+          <ul class="chips" aria-label="Tech stack"><li>Flutter</li><li>GetX</li><li>NestJS</li><li>TypeScript</li><li>MongoDB</li><li>Redis</li><li>Firebase</li></ul>
+          <p class="show__links"><a class="btn btn--solid" href="https://play.google.com/store/apps/details?id=com.utrav.driver" target="_blank" rel="noopener noreferrer">U-Trav Driver on Google Play <svg class="ic ic--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span class="sr">(opens in a new tab)</span></a></p>
         </div>
       </article>
       <article class="show show--flip" id="p-2">
+        <div class="show__media">
+          <div class="vis vis--phones">
+            <figure class="phone phone--0"><img src="img/rider-where.jpg" alt="U-Trav - screen 1" loading="lazy" width="520" height="844"></figure>
+            <figure class="phone phone--1"><img src="img/rider-choose.jpg" alt="U-Trav - screen 2" loading="lazy" width="520" height="844"></figure>
+            <figure class="phone phone--2"><img src="img/rider-trips.jpg" alt="U-Trav - screen 3" loading="lazy" width="520" height="844"></figure>
+          </div>
+        </div>
+        <div class="show__text">
+          <p class="eyebrow"><span class="num">02</span> Freelance contract · 2026 - present</p>
+          <h3 class="show__title">U-Trav<span>Customer App</span></h3>
+          <p class="show__desc">The rider app: book local rides, rentals, airport trips and outstation tours, choose a vehicle and pay.</p>
+          <ul class="kpis"><li><b>1K+</b><span>downloads</span></li><li><b>354</b><span>monthly active devices</span></li></ul>
+          <ul class="ticks"><li>Live ride tracking with SOS, change of destination mid-ride and push notifications for every ride step.</li><li>Outstation advance payment by UPI and Razorpay, and India-only place search.</li><li>Its own NestJS customer API deployed beside the main booking API behind Apache and PM2.</li></ul>
+          <p class="myrole"><b>My role</b>The UI was built by a teammate. I deployed its customer API, connected the app to the live backend, built features on top and ship its Play Store releases.</p>
+          <ul class="chips" aria-label="Tech stack"><li>Flutter</li><li>NestJS</li><li>Google Maps</li><li>Firebase</li><li>Razorpay</li></ul>
+          <p class="show__links"><a class="btn btn--solid" href="https://play.google.com/store/apps/details?id=com.utrav.user" target="_blank" rel="noopener noreferrer">U-Trav on Google Play <svg class="ic ic--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span class="sr">(opens in a new tab)</span></a></p>
+        </div>
+      </article>
+      <article class="show" id="p-3">
         <div class="show__media">
           <div class="vis vis--browser vis--stack">
             <figure class="browser browser--0">
@@ -384,7 +404,7 @@ img { display: block; max-width: 100%; height: auto; }
           </div>
         </div>
         <div class="show__text">
-          <p class="eyebrow"><span class="num">02</span> U-Trav and 1us · 2026</p>
+          <p class="eyebrow"><span class="num">03</span> U-Trav and 1us · 2026</p>
           <h3 class="show__title">Company Websites<span>utrav.in and 1us.co.in</span></h3>
           <p class="show__desc">Took the platform&#39;s website and its parent company&#39;s website live on our own server.</p>
           <ul class="kpis"><li><b>2</b><span>websites live</span></li><li><b>HTTPS</b><span>auto-renewing SSL</span></li></ul>
@@ -394,7 +414,7 @@ img { display: block; max-width: 100%; height: auto; }
           <p class="show__links"><a class="btn btn--solid" href="https://utrav.in" target="_blank" rel="noopener noreferrer">Visit utrav.in <svg class="ic ic--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span class="sr">(opens in a new tab)</span></a><a class="btn btn--ghost" href="https://1us.co.in" target="_blank" rel="noopener noreferrer">Visit 1us.co.in <svg class="ic ic--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span class="sr">(opens in a new tab)</span></a></p>
         </div>
       </article>
-      <article class="show" id="p-3">
+      <article class="show show--flip" id="p-4">
         <div class="show__media">
           <div class="vis vis--browser">
             <figure class="browser browser--0">
@@ -404,7 +424,7 @@ img { display: block; max-width: 100%; height: auto; }
           </div>
         </div>
         <div class="show__text">
-          <p class="eyebrow"><span class="num">03</span> Personal project · 2026</p>
+          <p class="eyebrow"><span class="num">04</span> Personal project · 2026</p>
           <h3 class="show__title">Tea Stall Online Store</h3>
           <p class="show__desc">Redesign of a Bangalore tea retailer&#39;s website as a complete online store.</p>
           <ul class="kpis"><li><b>13</b><span>pages</span></li><li><b>4</b><span>serverless functions</span></li></ul>
