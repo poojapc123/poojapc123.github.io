@@ -45,6 +45,7 @@ Bangalore, India | Sep 2025 - Apr 2026
 Bengaluru, India | Mar 2025 - Sep 2025
 
 - Completed Kalvium's 3-month remote mentor training and a 1-month bootcamp, then worked full time onsite at Alliance University, Bengaluru, as a mentor for B.Tech students.
+- Took classes in Mathematical Thinking and Discrete Mathematics, ran a React lab, and taught students to build and host Vite websites and design UI/UX in Figma.
 - Mentored students in frontend web development, object-oriented programming and DBMS: guided their Java, Python and C++ coding assignments and ran the technical assessments in which they defended their work.
 
 ### C-DAC (Centre for Development of Advanced Computing) - Cybersecurity Intern
@@ -67,7 +68,7 @@ Remote | Jan 2024 - Aug 2024
 
 - Languages: JavaScript, TypeScript, Python, Java, Dart, SQL, C++, HTML5, CSS3
 - Backend and APIs: Node.js, NestJS, Express, Flask, Spring Boot, REST API design, JWT authentication, role-based access control (RBAC), Mongoose, WebSockets (Socket.IO), payment webhooks, cron jobs, Puppeteer, Swagger/OpenAPI, Postman
-- Frontend and Mobile: React, Next.js, Ant Design, Bootstrap, SCSS, responsive design, server-side rendering; Flutter, Dart, GetX, Android and iOS builds, Firebase Cloud Messaging, push notifications, localization, Figma design-to-code
+- Frontend and Mobile: React, Vite, Next.js, Ant Design, Bootstrap, SCSS, responsive design, server-side rendering; Flutter, Dart, GetX, Android and iOS builds, Firebase Cloud Messaging, push notifications, localization, Figma UI/UX design and design-to-code
 - Databases and Caching: MongoDB, MySQL, Redis, schema and index design, aggregation pipelines, geospatial queries, query optimization
 - Cloud, DevOps and Integrations: DigitalOcean, AWS, MongoDB Atlas, Docker, Kubernetes, Linux and Windows Server administration, Apache, Nginx, PM2, CI/CD, Git, GitHub, Google Play Console; Razorpay, Stripe, Cashfree, MSG91 (SMS, WhatsApp), Firebase, Google Maps Platform, Anthropic Claude API
 - Security and Practices: VAPT, OWASP Top 10, SQL Injection, XSS, CSRF, secure code review, rate limiting, security headers, secrets management, TLS/SSL; Burp Suite, OWASP ZAP, Kali Linux, Nmap, Nessus, Splunk (SIEM), Wireshark; Agile/Scrum, SSDLC, unit testing
