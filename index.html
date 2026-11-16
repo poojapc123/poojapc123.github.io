@@ -279,10 +279,129 @@ a { color: inherit; }
 .btn__hint { font-size: .9em; opacity: .7; }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
+/* =====================================================================
+   2026-11-16 visual refresh: sticky menu, dark hero, rounded cards, chips
+   ===================================================================== */
+:root { --radius: 14px; --hero-1: #0b1e41; --hero-2: #132c5c; --hero-ink: #eef2f8; --hero-ink-2: #b9c4d6; --gold: #e5a900; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { background: radial-gradient(1200px 600px at 100% 0%, var(--accent-soft), transparent 60%) fixed, var(--ground); }
+
+/* top menu */
+.topnav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--hero-1) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.08); }
+.topnav__row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; }
+.topnav__brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--hero-ink); font-family: var(--serif); font-weight: 600; }
+.monogram { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 9px; background: linear-gradient(135deg, var(--gold), #f6d36b); color: var(--hero-1); font-size: .85rem; font-family: var(--serif); }
+.topnav__links { list-style: none; display: flex; gap: .25rem; margin: 0; padding: 0; overflow-x: auto; }
+.topnav__links a { display: block; padding: .4rem .7rem; border-radius: 999px; color: var(--hero-ink-2); text-decoration: none; font-size: .88rem; white-space: nowrap; transition: background .15s, color .15s; }
+.topnav__links a:hover { background: rgba(255,255,255,.1); color: #fff; }
+@media (max-width: 40rem) { .topnav__brand span:last-child { display: none; } }
+
+/* dark hero */
+.masthead { position: relative; overflow: hidden; color: var(--hero-ink); border-bottom: 0;
+  background:
+    radial-gradient(700px 380px at 85% 10%, rgba(229,169,0,.22), transparent 65%),
+    radial-gradient(600px 400px at 0% 100%, rgba(80,130,255,.18), transparent 60%),
+    linear-gradient(160deg, var(--hero-1), var(--hero-2)); }
+.masthead::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px); background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, #000, transparent 85%); -webkit-mask-image: linear-gradient(to bottom, #000, transparent 85%); }
+.masthead > .wrap { position: relative; }
+.masthead__grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 62rem) { .masthead__grid { grid-template-columns: minmax(0, 1fr) auto; } }
+.masthead__role { color: var(--gold); display: inline-flex; align-items: center; gap: .55rem; }
+.masthead__name { background: linear-gradient(90deg, #fff, #ffe7a3); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.masthead__lead { color: var(--hero-ink-2); }
+.masthead .facts { color: var(--hero-ink-2); }
+.masthead .facts li + li::before { color: rgba(255,255,255,.3); }
+.masthead .btn { background: rgba(255,255,255,.06); color: var(--hero-ink); border-color: rgba(255,255,255,.2); box-shadow: none; border-radius: 999px; }
+.masthead .btn:hover { border-color: var(--gold); color: var(--gold); }
+.masthead .btn--primary { background: var(--gold); color: var(--hero-1); border-color: var(--gold); font-weight: 600; }
+.masthead .btn--primary:hover { color: var(--hero-1); opacity: .9; }
+.pulse { width: .55rem; height: .55rem; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 0 0 rgba(61,220,151,.6); }
+@media (prefers-reduced-motion: no-preference) { .pulse { animation: pulse 2s infinite; } }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(61,220,151,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,151,0); } }
+
+.avatar { display: none; }
+@media (min-width: 62rem) {
+  .avatar { display: grid; place-items: center; width: 15rem; height: 15rem; border-radius: 50%; position: relative;
+    background: conic-gradient(from 200deg, var(--gold), #f6d36b, #5b8cff, var(--gold)); padding: 5px; }
+  .avatar span { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; background: var(--hero-1);
+    font-family: var(--serif); font-size: 4.5rem; color: #fff; letter-spacing: -.02em; }
+}
+
+.stats { list-style: none; margin: clamp(2rem, 5vw, 3rem) 0 0; padding: 0; display: grid; gap: .75rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 52rem) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.stat { padding: 1rem 1.1rem; border-radius: var(--radius); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); display: grid; gap: .15rem; }
+.stat__value { font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 600; color: var(--gold); line-height: 1.1; }
+.stat__label { font-size: .82rem; color: var(--hero-ink-2); }
+
+/* sections */
+.section { border-bottom: 0; }
+.section__title { font-size: clamp(1.4rem, 2.4vw, 1.75rem); }
+.section__head .stamp { color: var(--accent); }
+.section__title::after { content: ""; display: block; width: 2.5rem; height: 3px; border-radius: 3px; background: var(--accent); margin-top: .6rem; }
+
+/* cards instead of hairline grids */
+.projects, .now__list { gap: 1.1rem; background: none; border: 0; }
+.project, .now__item { border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.project:hover, .now__item:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 45%, var(--rule)); box-shadow: 0 2px 4px rgba(19,25,32,.06), 0 18px 40px -20px rgba(19,25,32,.35); }
+.project { padding: 1.5rem; position: relative; overflow: hidden; }
+.project::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); opacity: .7; }
+.project__name { font-size: 1.3rem; }
+@media (min-width: 52rem) {
+  .project--featured { grid-column: 1 / -1; }
+  .project--featured .project__points { grid-template-columns: 1fr 1fr; gap: .5rem 2rem; }
+}
+.project--featured { background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--accent-soft) 55%, var(--surface))); border-color: color-mix(in srgb, var(--accent) 40%, var(--rule)); }
+.project--featured::before { height: 4px; opacity: 1; background: linear-gradient(90deg, var(--gold), #5b8cff); }
+.project--featured .project__name { font-size: clamp(1.4rem, 2.6vw, 1.8rem); }
+.badge { justify-self: start; font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .65rem; border-radius: 999px; background: var(--accent); color: var(--surface); }
+.project .btn { border-radius: 999px; }
+.project__link { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: .35rem; margin: .4rem 0 0; padding: 0; }
+.chips li { font-family: var(--mono); font-size: .68rem; letter-spacing: .03em; padding: .22rem .6rem; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--rule); }
+
+/* "what I can do" cards */
+.offer { counter-reset: offer; }
+.offer .now__item { border-left-width: 1px; padding: 1.3rem 1.4rem 1.4rem 4.2rem; position: relative; counter-increment: offer; }
+.offer .now__item::before { content: counter(offer, decimal-leading-zero); position: absolute; left: 1.2rem; top: 1.2rem; width: 2.2rem; height: 2.2rem; border-radius: 10px; display: grid; place-items: center; font-family: var(--mono); font-size: .8rem; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+
+/* experience timeline */
+.role__points li::before, .project__points li::before { border-radius: 50%; }
+.role { position: relative; }
+.role__company { font-size: 1.55rem; }
+
+/* skills as cards */
+.skills { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
+.skill { padding: 1.1rem 1.2rem; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+.skill .stamp { color: var(--accent); }
+.skill__items { font-size: .94rem; }
+
+/* contact band */
+.contact { background: linear-gradient(160deg, var(--hero-1), var(--hero-2)); color: var(--hero-ink); border-radius: 0; }
+.contact .stamp { color: var(--hero-ink-2); }
+.contact__line { color: #fff; }
+.contact__item a { border-color: rgba(255,255,255,.25); }
+.contact__item a:hover { color: var(--gold); border-color: var(--gold); }
+.colophon { border-top: 0; }
+
+/* reveal on scroll (only when JS ran and motion is allowed) */
+/* content is always visible; the animation only plays from a starting frame */
+@media (prefers-reduced-motion: no-preference) {
+  .masthead__grid > div, .stats { animation: fadeUp .7s cubic-bezier(.2,.7,.3,1) both; }
+  .stats { animation-delay: .15s; }
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } }
+
 /* ---------- print: recruiters print pages ---------- */
 @media print {
   body { background: #fff; color: #000; font-size: 10.5pt; }
-  .skip, .actions, .section__aside { display: none !important; }
+  .skip, .actions, .section__aside, .topnav, .avatar { display: none !important; }
+  .masthead, .contact { background: #fff !important; color: #000 !important; }
+  .masthead__name { color: #000 !important; background: none !important; }
+  .masthead__lead, .stat__label, .contact__line { color: #000 !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
   .section__head { position: static; }
   .gauge__fill { animation: none !important; }
   .section, .role, .case, .metric, .project, .now__item { break-inside: avoid; }
@@ -299,19 +418,41 @@ a { color: inherit; }
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <p class="masthead__role">Full-stack developer · web, mobile, application security</p>
-    <h1 class="masthead__name">Pooja Chinchansur</h1>
-    <p class="masthead__lead">I build and secure web and mobile applications end to end: REST APIs, web front ends, Flutter apps and the servers they run on. My work covers U-Trav, a ride-hailing platform now complete and live - I own the backend, built the driver app, integrated the rider app and admin panel, and deployed the company websites and all the code to Git - an online store with Razorpay payments, Flask business applications, a deep-learning MRI project for my M.Tech, and penetration testing at C-DAC.</p>
-    <ul class="facts" aria-label="At a glance"><li>Bangalore, India</li><li>1+ year production experience</li><li>M.Tech CSE, Gold Medalist</li><li>Open to full-stack roles</li></ul>
-    <div class="actions">
-      <a class="btn btn--primary" href="mailto:poojachinchansur3443@gmail.com">Get in touch</a>
-      <a class="btn" href="Pooja_Chinchansur_Resume.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf">Resume (PDF) <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a>
-      <a class="btn" href="https://github.com/poojapc123" target="_blank" rel="noopener noreferrer">GitHub <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a>
-      <a class="btn" href="https://linkedin.com/in/pooja-chinchansur-44378222a" target="_blank" rel="noopener noreferrer">LinkedIn <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a>
-    </div>
+<nav class="topnav" aria-label="Sections">
+  <div class="wrap topnav__row">
+    <a class="topnav__brand" href="#top"><span class="monogram" aria-hidden="true">PC</span><span>Pooja Chinchansur</span></a>
+    <ul class="topnav__links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#hire">Hire me</a></li>
+      <li><a href="#work">Experience</a></li>
+      <li><a href="#stack">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
+</nav>
+
+<header class="masthead" id="top">
+  <div class="wrap masthead__grid">
+    <div>
+      <p class="masthead__role"><span class="pulse" aria-hidden="true"></span>Full-stack developer · web, mobile, application security</p>
+      <h1 class="masthead__name">Pooja Chinchansur</h1>
+      <p class="masthead__lead">I build and secure web and mobile applications end to end: REST APIs, web front ends, Flutter apps and the servers they run on. My work covers U-Trav, a ride-hailing platform now complete and live - I own the backend, built the driver app, integrated the rider app and admin panel, and deployed the company websites and all the code to Git - an online store with Razorpay payments, Flask business applications, a deep-learning MRI project for my M.Tech, and penetration testing at C-DAC.</p>
+      <ul class="facts" aria-label="At a glance"><li>Bangalore, India</li><li>1+ year production experience</li><li>M.Tech CSE, Gold Medalist</li><li>Open to full-stack roles</li></ul>
+      <div class="actions">
+        <a class="btn btn--primary" href="mailto:poojachinchansur3443@gmail.com">Get in touch</a>
+        <a class="btn" href="Pooja_Chinchansur_Resume.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf">Resume (PDF) <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a>
+        <a class="btn" href="https://github.com/poojapc123" target="_blank" rel="noopener noreferrer">GitHub <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a>
+        <a class="btn" href="https://linkedin.com/in/pooja-chinchansur-44378222a" target="_blank" rel="noopener noreferrer">LinkedIn <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a>
+      </div>
+    </div>
+    <div class="avatar" aria-hidden="true"><span>PC</span></div>
+  </div>
+  <div class="wrap"><ul class="stats" aria-label="Key numbers">
+    <li class="stat"><span class="stat__value">10K+</span><span class="stat__label">Driver app downloads on Google Play</span></li>
+    <li class="stat"><span class="stat__value">406</span><span class="stat__label">API routes I own in production</span></li>
+    <li class="stat"><span class="stat__value">2</span><span class="stat__label">Apps live on Google Play</span></li>
+    <li class="stat"><span class="stat__value">Gold</span><span class="stat__label">Medalist, M.Tech CSE</span></li>
+  </ul></div>
 </header>
 
 <main id="main">
@@ -325,84 +466,94 @@ a { color: inherit; }
         <p class="section__aside">From my jobs, internships and M.Tech.</p>
       </div>
       <div class="projects">
-      <article class="project">
+      <article class="project reveal project--featured">
+        <p class="badge">Featured · Live on Google Play</p>
         <h3 class="project__name">U-Trav - Ride-Hailing and Logistics Platform</h3>
         <p class="project__where">Freelance contract · 2026 - present</p>
         <p class="project__desc">Complete, live booking platform for rides, parcel delivery, intercity trips, tours and rentals: a rider app, a driver app, an admin panel and a fleet-owner portal on one backend.</p>
         <ul class="project__points"><li>My part: the whole backend API, the complete driver app, and the integration of the rider app and admin panel with the live API (their UI was by a teammate); I also deploy and run all of it on the production server, with every codebase in Git.</li><li>Both apps are live on Google Play: U-Trav Driver (10K+ downloads) and the U-Trav rider app (1K+).</li><li>Driver app: 20+ screens built from Figma, 10 languages, background ride-request alerts. Rider app: backend and integration for live ride tracking, SOS and in-ride destination change.</li><li>Subscription payments through Razorpay, Cashfree and Stripe, activated by payment webhooks; PDF rendering cut from 2.94 s to 614 ms.</li><li>Server and hosting setup: a DigitalOcean droplet with a reserved IP running the APIs, admin panel, fleet portal and websites behind Apache virtual hosts and PM2, with Let&#39;s Encrypt HTTPS, domain DNS records, fail2ban and backups moved off-server.</li><li>Messaging and services setup: MSG91 OTP SMS with DLT-approved templates and a WhatsApp Business number connected through MSG91, Firebase push notifications, Razorpay payment keys, MongoDB Atlas and Google Play Console releases.</li></ul>
-        <p class="stamp project__tech">NestJS, TypeScript, MongoDB, Redis, Next.js, Flutter</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>NestJS</li><li>TypeScript</li><li>MongoDB</li><li>Redis</li><li>Next.js</li><li>Flutter</li></ul>
         <p class="project__link"><a class="btn" href="https://play.google.com/store/apps/details?id=com.utrav.driver" target="_blank" rel="noopener noreferrer">U-Trav Driver on Google Play <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a> <a class="btn" href="https://play.google.com/store/apps/details?id=com.utrav.user" target="_blank" rel="noopener noreferrer">U-Trav rider app on Google Play <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a></p>
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Company Websites - utrav.in and 1us.co.in</h3>
         <p class="project__where">U-Trav and 1us · 2026</p>
         <p class="project__desc">Took the platform&#39;s website and its parent company&#39;s website live on our own server. The UI of both was designed and coded by teammates; the content, integration and hosting were mine.</p>
         <ul class="project__points"><li>1us.co.in: wrote all the site content and company information, converted the Next.js site to a static export, and hosted it with HTTPS (Let&#39;s Encrypt, auto-renewing) after pointing the domain&#39;s DNS at the server.</li><li>utrav.in: replaced the old WordPress site with the new React/Vite site, kept the privacy, terms and account-deletion pages that Google Play links to working, and kept app-link verification files in place.</li><li>Deployment scripts with backups and one-step rollback, and all the code and content pushed to Git.</li></ul>
-        <p class="stamp project__tech">React, Vite, Next.js, Apache, Let&#39;s Encrypt, Git</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>React</li><li>Vite</li><li>Next.js</li><li>Apache</li><li>Let&#39;s Encrypt</li><li>Git</li></ul>
         <p class="project__link"><a class="btn" href="https://utrav.in" target="_blank" rel="noopener noreferrer">Visit utrav.in <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a> <a class="btn" href="https://1us.co.in" target="_blank" rel="noopener noreferrer">Visit 1us.co.in <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a></p>
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Tea Stall Online Store</h3>
         <p class="project__where">Personal project · 2026</p>
         <p class="project__desc">Redesign of a Bangalore tea retailer&#39;s website as a complete online store.</p>
         <ul class="project__points"><li>13-page responsive storefront: shop, product pages, cart, checkout, and catering and franchise enquiry forms.</li><li>Razorpay checkout through four Node.js serverless functions, with cash on delivery as an option.</li><li>Prices are recalculated on the server, so a tampered request is still charged correctly; payments are verified by HMAC-SHA256 signature, with a webhook as backup.</li><li>A demo mode runs the whole checkout without payment keys.</li></ul>
-        <p class="stamp project__tech">HTML, CSS, JavaScript, Node.js, Razorpay, Vercel</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Razorpay</li><li>Vercel</li></ul>
         
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Matrix - Internal Operations Application</h3>
         <p class="project__where">Gundal Business · 2025 - 2026</p>
         <p class="project__desc">Internal web application for a public-sector data programme, where I built modules end to end, backend and frontend.</p>
         <ul class="project__points"><li>Invoicing module: GST invoices with HSN codes, automatic invoice numbering, customer records, and invoice history with edit, status and delete.</li><li>Ledger and stock management, including adding, adjusting and removing stock entries.</li><li>Two admin-dashboard reports (AC split details and AC part details), with cascading zone and area filters over PostgreSQL.</li></ul>
-        <p class="stamp project__tech">Python, Flask, PostgreSQL, SQLAlchemy, JavaScript</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Python</li><li>Flask</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>JavaScript</li></ul>
         
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Company Website - gundal.in</h3>
         <p class="project__where">Gundal Business · 2025 - 2026</p>
         <p class="project__desc">The company&#39;s public website, built and maintained end to end, from the responsive front end to the Flask services behind it.</p>
         <ul class="project__points"><li>Responsive front end in HTML5, CSS3, JavaScript and Bootstrap.</li><li>Flask REST services with request validation and structured error handling.</li><li>Ran the server after launch: patching, scheduled backups, hardening and SQL query tuning.</li></ul>
-        <p class="stamp project__tech">Python, Flask, JavaScript, Bootstrap, MySQL</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Python</li><li>Flask</li><li>JavaScript</li><li>Bootstrap</li><li>MySQL</li></ul>
         <p class="project__link"><a class="btn" href="https://gundal.in" target="_blank" rel="noopener noreferrer">Visit gundal.in <span class="btn__hint" aria-hidden="true">&nearr;</span><span class="visually-hidden">(opens in a new tab)</span></a></p>
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Web Application Penetration Test - OWASP Juice Shop</h3>
         <p class="project__where">C-DAC internship · 2024 - 2025</p>
         <p class="project__desc">Ethical vulnerability assessment and penetration testing of OWASP Juice Shop, a deliberately vulnerable web application, in a controlled lab.</p>
         <ul class="project__points"><li>Reconnaissance and scanning with Nmap, Nessus and Nikto; manual testing in Burp Suite and OWASP ZAP.</li><li>Found and exploited SQL injection, XSS, CSRF and broken authentication.</li><li>Wrote a report mapping each finding to the OWASP Top 10 with severity and fix steps.</li></ul>
-        <p class="stamp project__tech">Kali Linux, Burp Suite, OWASP ZAP, Nmap, Nessus, Nikto</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Kali Linux</li><li>Burp Suite</li><li>OWASP ZAP</li><li>Nmap</li><li>Nessus</li><li>Nikto</li></ul>
         
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Security Monitoring, Forensics and PKI Lab</h3>
         <p class="project__where">C-DAC internship · 2024 - 2025</p>
         <p class="project__desc">Hands-on security operations work alongside the penetration testing programme.</p>
         <ul class="project__points"><li>Monitored and investigated events in Splunk and OSSIM (SIEM).</li><li>Digital forensics with Autopsy, FTK Imager and Wireshark, written up as remediation reports.</li><li>Built and managed a public key infrastructure with digital certificates using XCA and Keytool; applied cryptography with OpenSSL.</li></ul>
-        <p class="stamp project__tech">Splunk, OSSIM, Wireshark, Autopsy, FTK Imager, OpenSSL</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Splunk</li><li>OSSIM</li><li>Wireshark</li><li>Autopsy</li><li>FTK Imager</li><li>OpenSSL</li></ul>
         
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">NeuroDigiScan - Brain Tumour Detection using Deep Learning</h3>
         <p class="project__where">M.Tech project · 2022 - 2024</p>
         <p class="project__desc">Detects brain tumours in MRI scans with a convolutional neural network.</p>
         <ul class="project__points"><li>CNN in TensorFlow/Keras trained on the Kaggle Brain MRI dataset (253 scans), with data augmentation, dropout and precision/recall tracking.</li><li>OpenCV image pipeline: grayscale preprocessing, threshold segmentation and feature extraction.</li><li>Desktop application (Tkinter + SQLite) for doctors: login, patient registration, MRI upload, detection result and a patient report.</li></ul>
-        <p class="stamp project__tech">Python, TensorFlow, Keras, OpenCV, Tkinter, SQLite</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>Tkinter</li><li>SQLite</li></ul>
         
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">E-Cart - Online Shopping Application</h3>
         <p class="project__where">Edubridge with Capgemini · 2024</p>
         <p class="project__desc">Online shopping web application in the style of Flipkart and Amazon, built during the Java full-stack internship.</p>
         <ul class="project__points"><li>Shopping flow on a Spring Boot (MVC) backend with REST APIs over MySQL.</li><li>Login, session handling and role-based access control.</li><li>HTML, CSS and JavaScript front end.</li></ul>
-        <p class="stamp project__tech">Java, Spring Boot, MySQL, HTML, CSS, JavaScript</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Java</li><li>Spring Boot</li><li>MySQL</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
         
       </article>
-      <article class="project">
+      <article class="project reveal">
+        
         <h3 class="project__name">Power BI Project - Twitter Analytics Dashboard</h3>
         <p class="project__where">VK REVER internship · 2024</p>
         <p class="project__desc">Interactive Power BI dashboard analysing Twitter performance data, built during the data analytics internship.</p>
         <ul class="project__points"><li>Impressions, engagement by country and top-performing content in one view.</li><li>Data cleaning, modelling and visualisation design.</li></ul>
-        <p class="stamp project__tech">Power BI</p>
+        <ul class="chips project__tech" aria-label="Tech stack"><li>Power BI</li></ul>
         
       </article>
       </div>
@@ -415,28 +566,28 @@ a { color: inherit; }
         <p class="stamp">If you hire me</p>
         <h2 class="section__title">What I can do for you</h2>
       </div>
-      <ul class="now__list">
-        <li class="now__item">
+      <ul class="now__list offer">
+        <li class="now__item reveal">
           <h3 class="now__title">Take a product from idea to live</h3>
           <p class="now__text">Design and build the REST API and database, connect web and mobile front ends to it, and put the whole thing into production - as I did for U-Trav, now on Google Play.</p>
         </li>
-        <li class="now__item">
+        <li class="now__item reveal">
           <h3 class="now__title">Build and ship mobile apps</h3>
           <p class="now__text">Flutter apps for Android and iOS built from Figma designs, with push notifications, live location, payments, multiple languages and regular Play Store releases.</p>
         </li>
-        <li class="now__item">
+        <li class="now__item reveal">
           <h3 class="now__title">Connect a designer&#39;s UI to a real backend</h3>
           <p class="now__text">Take front ends built by others - web or app - and wire them to live APIs, payments and authentication so they actually work.</p>
         </li>
-        <li class="now__item">
+        <li class="now__item reveal">
           <h3 class="now__title">Set up and run your servers</h3>
           <p class="now__text">DigitalOcean or AWS servers with Linux, Apache/Nginx, PM2, SSL certificates, domains and DNS, firewall, backups and rollback, with every codebase kept in Git.</p>
         </li>
-        <li class="now__item">
+        <li class="now__item reveal">
           <h3 class="now__title">Integrate payments, SMS and third-party services</h3>
           <p class="now__text">Razorpay, Stripe and Cashfree with webhook verification, MSG91 OTP SMS and WhatsApp Business, Google Maps, Firebase and the Claude AI API.</p>
         </li>
-        <li class="now__item">
+        <li class="now__item reveal">
           <h3 class="now__title">Keep it secure and fast</h3>
           <p class="now__text">OWASP Top 10 testing, access control, rate limiting and secrets management, plus measured performance fixes.</p>
         </li>
