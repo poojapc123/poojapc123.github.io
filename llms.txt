@@ -110,6 +110,7 @@ Redesign of a Bangalore tea retailer's website as a complete online store.
 - Shop, product pages, cart, checkout, and catering and franchise enquiry forms.
 - Razorpay checkout with prices recalculated on the server and payments verified by HMAC signature.
 - A demo mode runs the whole checkout without payment keys.
+View code on GitHub: https://github.com/poojapc123/tea-stall-online-store
 
 ### Matrix - Internal Operations Application
 Gundal Business · 2025 - 2026 | Python, Flask, PostgreSQL, SQLAlchemy, JavaScript
@@ -182,4 +183,4 @@ Interactive Power BI dashboard analysing Twitter performance data, built during 
 
 - English, Hindi, Kannada (fluent); Telugu (conversational)
 
-Last updated: 2026-11-16
+Last updated: 2026-11-17
