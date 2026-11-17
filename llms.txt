@@ -110,6 +110,7 @@ Redesign of a Bangalore tea retailer's website as a complete online store.
 - Shop, product pages, cart, checkout, and catering and franchise enquiry forms.
 - Razorpay checkout with prices recalculated on the server and payments verified by HMAC signature.
 - A demo mode runs the whole checkout without payment keys.
+Live demo: https://tea-stall-online-store.vercel.app
 View code on GitHub: https://github.com/poojapc123/tea-stall-online-store
 
 ### Matrix - Internal Operations Application
